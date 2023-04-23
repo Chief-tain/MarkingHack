@@ -1,0 +1,3762 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_dfa1e62e6d21a061f8e34a1f14df2a0c {
+                    position: relative;
+                    width: 1300.0px;
+                    height: 810.0px;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+    <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css"/>
+    <script src="https://cdn.jsdelivr.net/gh/ardhi/Leaflet.MousePosition/src/L.Control.MousePosition.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ardhi/Leaflet.MousePosition/src/L.Control.MousePosition.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.fullscreen/1.4.2/Control.FullScreen.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.fullscreen/1.4.2/Control.FullScreen.min.css"/>
+    <script src="https://cdn.jsdelivr.net/gh/ljagis/leaflet-measure@2.1.7/dist/leaflet-measure.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ljagis/leaflet-measure@2.1.7/dist/leaflet-measure.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.2/leaflet.draw.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.2/leaflet.draw.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet-ant-path@1.1.2/dist/leaflet-ant-path.min.js"></script>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_dfa1e62e6d21a061f8e34a1f14df2a0c" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_dfa1e62e6d21a061f8e34a1f14df2a0c = L.map(
+                "map_dfa1e62e6d21a061f8e34a1f14df2a0c",
+                {
+                    center: [65.0, 83.0],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 4,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_c1292827ff6f7efbac014580e14481ec = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 14, "maxZoom": 14, "minZoom": 1, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_dfa1e62e6d21a061f8e34a1f14df2a0c);
+        
+    
+            L.Control.geocoder(
+                {"collapsed": false, "defaultMarkGeocode": true, "position": "topright"}
+            ).on('markgeocode', function(e) {
+                map_dfa1e62e6d21a061f8e34a1f14df2a0c.setView(e.geocode.center, 11);
+            }).addTo(map_dfa1e62e6d21a061f8e34a1f14df2a0c);
+
+        
+    
+            var mouse_position_4fb4f0815772e6f7b4139794084dd647 = new L.Control.MousePosition(
+                {"emptyString": "Unavailable", "lngFirst": false, "numDigits": 5, "position": "topright", "prefix": "Coordinates:", "separator": " | "}
+            );
+            mouse_position_4fb4f0815772e6f7b4139794084dd647.options["latFormatter"] =
+                function(num) {return L.Util.formatNum(num, 3) + ' º ';};;
+            mouse_position_4fb4f0815772e6f7b4139794084dd647.options["lngFormatter"] =
+                function(num) {return L.Util.formatNum(num, 3) + ' º ';};;
+            map_dfa1e62e6d21a061f8e34a1f14df2a0c.addControl(mouse_position_4fb4f0815772e6f7b4139794084dd647);
+        
+    
+            var tile_layer_81a0456b93294c257f895b4084aa5417 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+            var mini_map_4d8fb08ae12b07c143288a9a66ed15ed = new L.Control.MiniMap(
+                tile_layer_81a0456b93294c257f895b4084aa5417,
+                {"autoToggleDisplay": false, "centerFixed": false, "collapsedHeight": 25, "collapsedWidth": 25, "height": 150, "minimized": false, "position": "bottomright", "toggleDisplay": false, "width": 150, "zoomAnimation": false, "zoomLevelOffset": -5}
+            );
+            map_dfa1e62e6d21a061f8e34a1f14df2a0c.addControl(mini_map_4d8fb08ae12b07c143288a9a66ed15ed);
+        
+    
+            L.control.fullscreen(
+                {"forceSeparateButton": false, "position": "topleft", "title": "Full Screen", "titleCancel": "Exit Full Screen"}
+            ).addTo(map_dfa1e62e6d21a061f8e34a1f14df2a0c);
+        
+    
+            var measure_control_9d594a882bf22f5309c8d7a51f66af02 = new L.Control.Measure(
+                {"position": "topright", "primaryAreaUnit": "sqmeters", "primaryLengthUnit": "meters", "secondaryAreaUnit": "acres", "secondaryLengthUnit": "miles"});
+            map_dfa1e62e6d21a061f8e34a1f14df2a0c.addControl(measure_control_9d594a882bf22f5309c8d7a51f66af02);
+
+        
+    
+            var tile_layer_1f9a8948b5f8bcda6cf85fcb91401549 = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}.png",
+                {"attribution": "Map tiles by \u003ca href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_dfa1e62e6d21a061f8e34a1f14df2a0c);
+        
+    
+            var tile_layer_0d822d707b1fd4adc160180437300868 = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg",
+                {"attribution": "Map tiles by \u003ca href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://creativecommons.org/licenses/by-sa/3.0\"\u003eCC BY SA\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_dfa1e62e6d21a061f8e34a1f14df2a0c);
+        
+    
+            var tile_layer_fe2ce2cc7f25f8aed2743e6871148300 = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.jpg",
+                {"attribution": "Map tiles by \u003ca href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://creativecommons.org/licenses/by-sa/3.0\"\u003eCC BY SA\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_dfa1e62e6d21a061f8e34a1f14df2a0c);
+        
+    
+            var tile_layer_da0b78e8a739b9505aac5eb894703019 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_dfa1e62e6d21a061f8e34a1f14df2a0c);
+        
+    
+            var tile_layer_7d8c220db05da4adf9c878ae5960c5b2 = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_dfa1e62e6d21a061f8e34a1f14df2a0c);
+        
+    
+            var tile_layer_d6aa458d8b3621203d8ee187a90ca6d1 = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_dfa1e62e6d21a061f8e34a1f14df2a0c);
+        
+    
+            var tile_layer_42fd742928e409eb2e57bce67a155b3d = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+                {"attribution": "Esri", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_dfa1e62e6d21a061f8e34a1f14df2a0c);
+        
+    
+            var options = {
+              position: "topleft",
+              draw: {},
+              edit: {},
+            }
+            // FeatureGroup is to store editable layers.
+            var drawnItems = new L.featureGroup().addTo(
+                map_dfa1e62e6d21a061f8e34a1f14df2a0c
+            );
+            options.edit.featureGroup = drawnItems;
+            var draw_control_0be59759c5d08250e225e3f6907130f7 = new L.Control.Draw(
+                options
+            ).addTo( map_dfa1e62e6d21a061f8e34a1f14df2a0c );
+            map_dfa1e62e6d21a061f8e34a1f14df2a0c.on(L.Draw.Event.CREATED, function(e) {
+                var layer = e.layer,
+                    type = e.layerType;
+                var coords = JSON.stringify(layer.toGeoJSON());
+                layer.on('click', function() {
+                    alert(coords);
+                    console.log(coords);
+                });
+                drawnItems.addLayer(layer);
+             });
+            map_dfa1e62e6d21a061f8e34a1f14df2a0c.on('draw:created', function(e) {
+                drawnItems.addLayer(e.layer);
+            });
+            
+        
+    
+            var marker_cluster_f68c0194942428dc989688faac3aba29 = L.markerClusterGroup(
+                {}
+            );
+            map_dfa1e62e6d21a061f8e34a1f14df2a0c.addLayer(marker_cluster_f68c0194942428dc989688faac3aba29);
+        
+    
+            var marker_59dc8aea291ab38dc752aeb6168ecf2e = L.marker(
+                [56.15, 101.63],
+                {}
+            ).addTo(marker_cluster_f68c0194942428dc989688faac3aba29);
+        
+    
+            var icon_547522d1967b448a8c1320ab7cc83b0a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_59dc8aea291ab38dc752aeb6168ecf2e.setIcon(icon_547522d1967b448a8c1320ab7cc83b0a);
+        
+    
+            marker_59dc8aea291ab38dc752aeb6168ecf2e.bindTooltip(
+                `<div>
+                     Братск
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_40079c5df3a0aad28f07865fb91ed98c = L.marker(
+                [52.28333, 104.3],
+                {}
+            ).addTo(marker_cluster_f68c0194942428dc989688faac3aba29);
+        
+    
+            var icon_7e6025951c6de84dbccd93fa24f2643f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_40079c5df3a0aad28f07865fb91ed98c.setIcon(icon_7e6025951c6de84dbccd93fa24f2643f);
+        
+    
+            marker_40079c5df3a0aad28f07865fb91ed98c.bindTooltip(
+                `<div>
+                     Иркутск
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_fa2c8cf8c7d350636795da96d8a508a6 = L.marker(
+                [44.94806, 34.10417],
+                {}
+            ).addTo(marker_cluster_f68c0194942428dc989688faac3aba29);
+        
+    
+            var icon_d698782154b5bbe94404dc60c0a0d751 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_fa2c8cf8c7d350636795da96d8a508a6.setIcon(icon_d698782154b5bbe94404dc60c0a0d751);
+        
+    
+            marker_fa2c8cf8c7d350636795da96d8a508a6.bindTooltip(
+                `<div>
+                     Симферополь
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_fcb898317365396f21d67f2a05bc79c0 = L.marker(
+                [45.04889, 35.37917],
+                {}
+            ).addTo(marker_cluster_f68c0194942428dc989688faac3aba29);
+        
+    
+            var icon_48c22644fdbabf2fe12273181c02331e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_fcb898317365396f21d67f2a05bc79c0.setIcon(icon_48c22644fdbabf2fe12273181c02331e);
+        
+    
+            marker_fcb898317365396f21d67f2a05bc79c0.bindTooltip(
+                `<div>
+                     Феодосия
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ef6650ce40c813e512e32d38c6470edc = L.marker(
+                [44.94806, 34.10417],
+                {}
+            ).addTo(marker_cluster_f68c0194942428dc989688faac3aba29);
+        
+    
+            var icon_a68d372252465abd3d23596537e39f6e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_ef6650ce40c813e512e32d38c6470edc.setIcon(icon_a68d372252465abd3d23596537e39f6e);
+        
+    
+            marker_ef6650ce40c813e512e32d38c6470edc.bindTooltip(
+                `<div>
+                     Симферополь
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_12a661aa60632cb05fdfe8e61f25b599 = L.marker(
+                [44.94806, 34.10417],
+                {}
+            ).addTo(marker_cluster_f68c0194942428dc989688faac3aba29);
+        
+    
+            var icon_5079c617b9210b54526791128cb8bde3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_12a661aa60632cb05fdfe8e61f25b599.setIcon(icon_5079c617b9210b54526791128cb8bde3);
+        
+    
+            marker_12a661aa60632cb05fdfe8e61f25b599.bindTooltip(
+                `<div>
+                     Симферополь
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_7eed9154536b77b436c4ddac3bc0ca94 = L.marker(
+                [50.25778, 127.53639],
+                {}
+            ).addTo(marker_cluster_f68c0194942428dc989688faac3aba29);
+        
+    
+            var icon_cbaec27c94f2c77672ea5a052fa0d6f8 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_7eed9154536b77b436c4ddac3bc0ca94.setIcon(icon_cbaec27c94f2c77672ea5a052fa0d6f8);
+        
+    
+            marker_7eed9154536b77b436c4ddac3bc0ca94.bindTooltip(
+                `<div>
+                     Благовещенск
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a3af89bb2b5f654f67a5604a24d735cd = L.marker(
+                [50.25778, 127.53639],
+                {}
+            ).addTo(marker_cluster_f68c0194942428dc989688faac3aba29);
+        
+    
+            var icon_edda172fb7543bf359874b4d562ea8bb = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_a3af89bb2b5f654f67a5604a24d735cd.setIcon(icon_edda172fb7543bf359874b4d562ea8bb);
+        
+    
+            marker_a3af89bb2b5f654f67a5604a24d735cd.bindTooltip(
+                `<div>
+                     Благовещенск
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_7dd0605f0e22fdbdd937917c17535807 = L.marker(
+                [50.25778, 127.53639],
+                {}
+            ).addTo(marker_cluster_f68c0194942428dc989688faac3aba29);
+        
+    
+            var icon_a1e9b547f1078529d0b8b2b9cbda3aea = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_7dd0605f0e22fdbdd937917c17535807.setIcon(icon_a1e9b547f1078529d0b8b2b9cbda3aea);
+        
+    
+            marker_7dd0605f0e22fdbdd937917c17535807.bindTooltip(
+                `<div>
+                     Благовещенск
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_99d20fa9dd1ec3b5dd8795195f06eee8 = L.marker(
+                [53.73333, 127.25],
+                {}
+            ).addTo(marker_cluster_f68c0194942428dc989688faac3aba29);
+        
+    
+            var icon_abfc497176636bd580928e40e896bcdb = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_99d20fa9dd1ec3b5dd8795195f06eee8.setIcon(icon_abfc497176636bd580928e40e896bcdb);
+        
+    
+            marker_99d20fa9dd1ec3b5dd8795195f06eee8.bindTooltip(
+                `<div>
+                     Зея
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_043dd48502958db0ae27eedd771f5b36 = L.marker(
+                [44.94806, 34.10417],
+                {}
+            ).addTo(marker_cluster_f68c0194942428dc989688faac3aba29);
+        
+    
+            var icon_be4b6a94f828d7ef35cea3c94d8011d2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_043dd48502958db0ae27eedd771f5b36.setIcon(icon_be4b6a94f828d7ef35cea3c94d8011d2);
+        
+    
+            marker_043dd48502958db0ae27eedd771f5b36.bindTooltip(
+                `<div>
+                     Симферополь
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_65baa4c0a1bd9eb7f83732cab1617ef3 = L.marker(
+                [44.94806, 34.10417],
+                {}
+            ).addTo(marker_cluster_f68c0194942428dc989688faac3aba29);
+        
+    
+            var icon_d08e5d995339570f66c48e4132ca4415 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_65baa4c0a1bd9eb7f83732cab1617ef3.setIcon(icon_d08e5d995339570f66c48e4132ca4415);
+        
+    
+            marker_65baa4c0a1bd9eb7f83732cab1617ef3.bindTooltip(
+                `<div>
+                     Симферополь
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e61c56bdb629f661c6299e474fbeb800 = L.marker(
+                [44.94806, 34.10417],
+                {}
+            ).addTo(marker_cluster_f68c0194942428dc989688faac3aba29);
+        
+    
+            var icon_c12ee33a910926290b0ab80ef456fcb5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_e61c56bdb629f661c6299e474fbeb800.setIcon(icon_c12ee33a910926290b0ab80ef456fcb5);
+        
+    
+            marker_e61c56bdb629f661c6299e474fbeb800.bindTooltip(
+                `<div>
+                     Симферополь
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_cca9ca63e6b7a6d1e874d581cf4b8900 = L.marker(
+                [44.94806, 34.10417],
+                {}
+            ).addTo(marker_cluster_f68c0194942428dc989688faac3aba29);
+        
+    
+            var icon_13ef19d1fbe7178983ca056f6a628c15 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_cca9ca63e6b7a6d1e874d581cf4b8900.setIcon(icon_13ef19d1fbe7178983ca056f6a628c15);
+        
+    
+            marker_cca9ca63e6b7a6d1e874d581cf4b8900.bindTooltip(
+                `<div>
+                     Симферополь
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_873e1a6ec0e1b5eddfe1de08f4a9d064 = L.marker(
+                [52.28333, 104.3],
+                {}
+            ).addTo(marker_cluster_f68c0194942428dc989688faac3aba29);
+        
+    
+            var icon_ae151f1a6e0e26ee976484c5a4a9222a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_873e1a6ec0e1b5eddfe1de08f4a9d064.setIcon(icon_ae151f1a6e0e26ee976484c5a4a9222a);
+        
+    
+            marker_873e1a6ec0e1b5eddfe1de08f4a9d064.bindTooltip(
+                `<div>
+                     Иркутск
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_2d674680299290d7c2d1dd9120639e2a = L.marker(
+                [53.91667, 102.05],
+                {}
+            ).addTo(marker_cluster_f68c0194942428dc989688faac3aba29);
+        
+    
+            var icon_af0834ce2c9da79cc7e74ae145fb17d7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_2d674680299290d7c2d1dd9120639e2a.setIcon(icon_af0834ce2c9da79cc7e74ae145fb17d7);
+        
+    
+            marker_2d674680299290d7c2d1dd9120639e2a.bindTooltip(
+                `<div>
+                     Зима
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_91654ae56245e8f3f10f513896cab4a6 = L.marker(
+                [43.11667, 131.9],
+                {}
+            ).addTo(marker_cluster_f68c0194942428dc989688faac3aba29);
+        
+    
+            var icon_001c1bfc373e8aa0ee13f321ea753563 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_91654ae56245e8f3f10f513896cab4a6.setIcon(icon_001c1bfc373e8aa0ee13f321ea753563);
+        
+    
+            marker_91654ae56245e8f3f10f513896cab4a6.bindTooltip(
+                `<div>
+                     Владивосток
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_2baf7c1200190368e829f8254caea520 = L.marker(
+                [53.01667, 158.65],
+                {}
+            ).addTo(marker_cluster_f68c0194942428dc989688faac3aba29);
+        
+    
+            var icon_023aef5d4517b4533e64843fbc13a40f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_2baf7c1200190368e829f8254caea520.setIcon(icon_023aef5d4517b4533e64843fbc13a40f);
+        
+    
+            marker_2baf7c1200190368e829f8254caea520.bindTooltip(
+                `<div>
+                     Петропавловск-Камчатский
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_860530b3e3da36d3fda9c6d342b70c9e = L.marker(
+                [55.44083, 65.34111],
+                {}
+            ).addTo(marker_cluster_f68c0194942428dc989688faac3aba29);
+        
+    
+            var icon_d111aec4dc1584eed628c7574ff03cc3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_860530b3e3da36d3fda9c6d342b70c9e.setIcon(icon_d111aec4dc1584eed628c7574ff03cc3);
+        
+    
+            marker_860530b3e3da36d3fda9c6d342b70c9e.bindTooltip(
+                `<div>
+                     Курган
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d7cdf7094dc02397e13f8a16fd254dec = L.marker(
+                [55.44083, 65.34111],
+                {}
+            ).addTo(marker_cluster_f68c0194942428dc989688faac3aba29);
+        
+    
+            var icon_904fa4befafdc303372811beed511f7a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_d7cdf7094dc02397e13f8a16fd254dec.setIcon(icon_904fa4befafdc303372811beed511f7a);
+        
+    
+            marker_d7cdf7094dc02397e13f8a16fd254dec.bindTooltip(
+                `<div>
+                     Курган
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_b38cdfdb667d261dcaaee897bd3b58f3 = L.marker(
+                [53.01667, 158.65],
+                {}
+            ).addTo(marker_cluster_f68c0194942428dc989688faac3aba29);
+        
+    
+            var icon_4da799c8918590503e94118690e04804 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_b38cdfdb667d261dcaaee897bd3b58f3.setIcon(icon_4da799c8918590503e94118690e04804);
+        
+    
+            marker_b38cdfdb667d261dcaaee897bd3b58f3.bindTooltip(
+                `<div>
+                     Петропавловск-Камчатский
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_27d0a22ae0ed6ecd3b51cb56941c3578 = L.marker(
+                [52.93333, 158.4],
+                {}
+            ).addTo(marker_cluster_f68c0194942428dc989688faac3aba29);
+        
+    
+            var icon_e71122172c743cbf5f79c27a6b84f8aa = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_27d0a22ae0ed6ecd3b51cb56941c3578.setIcon(icon_e71122172c743cbf5f79c27a6b84f8aa);
+        
+    
+            marker_27d0a22ae0ed6ecd3b51cb56941c3578.bindTooltip(
+                `<div>
+                     Вилючинск
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_522689038e7a5cbb13ede1b30814a606 = L.marker(
+                [43.11667, 131.9],
+                {}
+            ).addTo(marker_cluster_f68c0194942428dc989688faac3aba29);
+        
+    
+            var icon_104433f43764233b0d1ca3d8e7c780b2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_522689038e7a5cbb13ede1b30814a606.setIcon(icon_104433f43764233b0d1ca3d8e7c780b2);
+        
+    
+            marker_522689038e7a5cbb13ede1b30814a606.bindTooltip(
+                `<div>
+                     Владивосток
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c3a4883227b61a497878b1b6a272d7d0 = L.marker(
+                [53.01667, 158.65],
+                {}
+            ).addTo(marker_cluster_f68c0194942428dc989688faac3aba29);
+        
+    
+            var icon_173215ee9623cf9cceb39f4749958b43 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_c3a4883227b61a497878b1b6a272d7d0.setIcon(icon_173215ee9623cf9cceb39f4749958b43);
+        
+    
+            marker_c3a4883227b61a497878b1b6a272d7d0.bindTooltip(
+                `<div>
+                     Петропавловск-Камчатский
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_9a13198572db3a2b23c8432fae865d38 = L.marker(
+                [50.25778, 127.53639],
+                {}
+            ).addTo(marker_cluster_f68c0194942428dc989688faac3aba29);
+        
+    
+            var icon_84e5db8d0f560a814b05ee1bc9f588a9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_9a13198572db3a2b23c8432fae865d38.setIcon(icon_84e5db8d0f560a814b05ee1bc9f588a9);
+        
+    
+            marker_9a13198572db3a2b23c8432fae865d38.bindTooltip(
+                `<div>
+                     Благовещенск
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c116ea9be77b98e42417efc4a9ed3cc2 = L.marker(
+                [51.38333, 128.13333],
+                {}
+            ).addTo(marker_cluster_f68c0194942428dc989688faac3aba29);
+        
+    
+            var icon_f35b3fce0d2cb2c67805fea3753d060b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_c116ea9be77b98e42417efc4a9ed3cc2.setIcon(icon_f35b3fce0d2cb2c67805fea3753d060b);
+        
+    
+            marker_c116ea9be77b98e42417efc4a9ed3cc2.bindTooltip(
+                `<div>
+                     Свободный
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e51bc2aa89e407b3aa2998a899cfb720 = L.marker(
+                [50.25778, 127.53639],
+                {}
+            ).addTo(marker_cluster_f68c0194942428dc989688faac3aba29);
+        
+    
+            var icon_ed84cad39f439764350b50c035bacefc = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_e51bc2aa89e407b3aa2998a899cfb720.setIcon(icon_ed84cad39f439764350b50c035bacefc);
+        
+    
+            marker_e51bc2aa89e407b3aa2998a899cfb720.bindTooltip(
+                `<div>
+                     Благовещенск
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_318896e9e8a1abacf07ec41e59cddd94 = L.marker(
+                [52.0, 127.66667],
+                {}
+            ).addTo(marker_cluster_f68c0194942428dc989688faac3aba29);
+        
+    
+            var icon_b296fdee38025782fe70fa0d5645be99 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_318896e9e8a1abacf07ec41e59cddd94.setIcon(icon_b296fdee38025782fe70fa0d5645be99);
+        
+    
+            marker_318896e9e8a1abacf07ec41e59cddd94.bindTooltip(
+                `<div>
+                     Шимановск
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ab69eebc46f00d44d578b0fa04545c7b = L.marker(
+                [43.11667, 131.9],
+                {}
+            ).addTo(marker_cluster_f68c0194942428dc989688faac3aba29);
+        
+    
+            var icon_ff02059d6bc967defab1f6a350b636ed = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_ab69eebc46f00d44d578b0fa04545c7b.setIcon(icon_ff02059d6bc967defab1f6a350b636ed);
+        
+    
+            marker_ab69eebc46f00d44d578b0fa04545c7b.bindTooltip(
+                `<div>
+                     Владивосток
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_7f6e2ec6d01a84d2ac026a15110bc624 = L.marker(
+                [53.01667, 158.65],
+                {}
+            ).addTo(marker_cluster_f68c0194942428dc989688faac3aba29);
+        
+    
+            var icon_80c511dc9dc83a0a5085a87d4aca79e2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_7f6e2ec6d01a84d2ac026a15110bc624.setIcon(icon_80c511dc9dc83a0a5085a87d4aca79e2);
+        
+    
+            marker_7f6e2ec6d01a84d2ac026a15110bc624.bindTooltip(
+                `<div>
+                     Петропавловск-Камчатский
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_5765d8298e4f88f74d1e6b823eafca48 = L.marker(
+                [50.25778, 127.53639],
+                {}
+            ).addTo(marker_cluster_f68c0194942428dc989688faac3aba29);
+        
+    
+            var icon_92e52010b64c6aeb39c5b630db369b9f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_5765d8298e4f88f74d1e6b823eafca48.setIcon(icon_92e52010b64c6aeb39c5b630db369b9f);
+        
+    
+            marker_5765d8298e4f88f74d1e6b823eafca48.bindTooltip(
+                `<div>
+                     Благовещенск
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_61c2f94193f9639a53cbcf812762d435 = L.marker(
+                [53.73333, 127.25],
+                {}
+            ).addTo(marker_cluster_f68c0194942428dc989688faac3aba29);
+        
+    
+            var icon_bbdeeaa577acb4eb1fb1b3fb90d3755d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_61c2f94193f9639a53cbcf812762d435.setIcon(icon_bbdeeaa577acb4eb1fb1b3fb90d3755d);
+        
+    
+            marker_61c2f94193f9639a53cbcf812762d435.bindTooltip(
+                `<div>
+                     Зея
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_fb32c5aea1c2f2386181043d870dd6e1 = L.marker(
+                [55.44083, 65.34111],
+                {}
+            ).addTo(marker_cluster_f68c0194942428dc989688faac3aba29);
+        
+    
+            var icon_b2c8215da012176f50014f4c6568c517 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_fb32c5aea1c2f2386181043d870dd6e1.setIcon(icon_b2c8215da012176f50014f4c6568c517);
+        
+    
+            marker_fb32c5aea1c2f2386181043d870dd6e1.bindTooltip(
+                `<div>
+                     Курган
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_4a485c7f1f666ddb0d9c0a323ddeee05 = L.marker(
+                [55.44083, 65.34111],
+                {}
+            ).addTo(marker_cluster_f68c0194942428dc989688faac3aba29);
+        
+    
+            var icon_77a8d25fd883d283a158adc3460cd2b1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_4a485c7f1f666ddb0d9c0a323ddeee05.setIcon(icon_77a8d25fd883d283a158adc3460cd2b1);
+        
+    
+            marker_4a485c7f1f666ddb0d9c0a323ddeee05.bindTooltip(
+                `<div>
+                     Курган
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_cdfde9e495ebad180dce97c67485ffaf = L.marker(
+                [44.94806, 34.10417],
+                {}
+            ).addTo(marker_cluster_f68c0194942428dc989688faac3aba29);
+        
+    
+            var icon_1a101769811d3183b873ab36fba4001f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_cdfde9e495ebad180dce97c67485ffaf.setIcon(icon_1a101769811d3183b873ab36fba4001f);
+        
+    
+            marker_cdfde9e495ebad180dce97c67485ffaf.bindTooltip(
+                `<div>
+                     Симферополь
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f2814ee2f69865d59784e8c70f7fc5b9 = L.marker(
+                [44.94806, 34.10417],
+                {}
+            ).addTo(marker_cluster_f68c0194942428dc989688faac3aba29);
+        
+    
+            var icon_4adc1a1a698a9169684bb6131646e672 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_f2814ee2f69865d59784e8c70f7fc5b9.setIcon(icon_4adc1a1a698a9169684bb6131646e672);
+        
+    
+            marker_f2814ee2f69865d59784e8c70f7fc5b9.bindTooltip(
+                `<div>
+                     Симферополь
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c6536e8f1e40eba83c6aef168bfde13d = L.marker(
+                [50.25778, 127.53639],
+                {}
+            ).addTo(marker_cluster_f68c0194942428dc989688faac3aba29);
+        
+    
+            var icon_2094eaa6e8f77fce9780c565a7480ef3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_c6536e8f1e40eba83c6aef168bfde13d.setIcon(icon_2094eaa6e8f77fce9780c565a7480ef3);
+        
+    
+            marker_c6536e8f1e40eba83c6aef168bfde13d.bindTooltip(
+                `<div>
+                     Благовещенск
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_1358f7a45a114b53981e5a9d14306ec4 = L.marker(
+                [50.91667, 128.48333],
+                {}
+            ).addTo(marker_cluster_f68c0194942428dc989688faac3aba29);
+        
+    
+            var icon_27238cd38f4db0e10a01e7c578a105ac = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_1358f7a45a114b53981e5a9d14306ec4.setIcon(icon_27238cd38f4db0e10a01e7c578a105ac);
+        
+    
+            marker_1358f7a45a114b53981e5a9d14306ec4.bindTooltip(
+                `<div>
+                     Белогорск
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ca0513b4b2fe0215d18e68d144cb01c7 = L.marker(
+                [50.25778, 127.53639],
+                {}
+            ).addTo(marker_cluster_f68c0194942428dc989688faac3aba29);
+        
+    
+            var icon_d919ab908f50e2e8fb2ea4e9bd7e5cf0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_ca0513b4b2fe0215d18e68d144cb01c7.setIcon(icon_d919ab908f50e2e8fb2ea4e9bd7e5cf0);
+        
+    
+            marker_ca0513b4b2fe0215d18e68d144cb01c7.bindTooltip(
+                `<div>
+                     Благовещенск
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_1e6e3a0634b63a3618aa8bd4396ae77f = L.marker(
+                [52.0, 127.66667],
+                {}
+            ).addTo(marker_cluster_f68c0194942428dc989688faac3aba29);
+        
+    
+            var icon_dd7ab5ea7a43f7e4ebccc8a5e29779dc = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_1e6e3a0634b63a3618aa8bd4396ae77f.setIcon(icon_dd7ab5ea7a43f7e4ebccc8a5e29779dc);
+        
+    
+            marker_1e6e3a0634b63a3618aa8bd4396ae77f.bindTooltip(
+                `<div>
+                     Шимановск
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_219754442993b98ef74e8cd065e612a2 = L.marker(
+                [50.25778, 127.53639],
+                {}
+            ).addTo(marker_cluster_f68c0194942428dc989688faac3aba29);
+        
+    
+            var icon_c4233e43d518588b7e3d7e6c56b1faf2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_219754442993b98ef74e8cd065e612a2.setIcon(icon_c4233e43d518588b7e3d7e6c56b1faf2);
+        
+    
+            marker_219754442993b98ef74e8cd065e612a2.bindTooltip(
+                `<div>
+                     Благовещенск
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_4bc67ed0907d7fcbb64b6efd8945419d = L.marker(
+                [50.25778, 127.53639],
+                {}
+            ).addTo(marker_cluster_f68c0194942428dc989688faac3aba29);
+        
+    
+            var icon_82845b3a6409e52ccaa815c6ce8cf5a1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_4bc67ed0907d7fcbb64b6efd8945419d.setIcon(icon_82845b3a6409e52ccaa815c6ce8cf5a1);
+        
+    
+            marker_4bc67ed0907d7fcbb64b6efd8945419d.bindTooltip(
+                `<div>
+                     Благовещенск
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a81f08d38d8ba3f3ce3475e1e1db2133 = L.marker(
+                [50.25778, 127.53639],
+                {}
+            ).addTo(marker_cluster_f68c0194942428dc989688faac3aba29);
+        
+    
+            var icon_f57385fe2fe32e744ec71ad268f8fb7e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_a81f08d38d8ba3f3ce3475e1e1db2133.setIcon(icon_f57385fe2fe32e744ec71ad268f8fb7e);
+        
+    
+            marker_a81f08d38d8ba3f3ce3475e1e1db2133.bindTooltip(
+                `<div>
+                     Благовещенск
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_115d97d9bb7a223c40074b78e4750f56 = L.marker(
+                [51.38333, 128.13333],
+                {}
+            ).addTo(marker_cluster_f68c0194942428dc989688faac3aba29);
+        
+    
+            var icon_1019b0a1377940bfcb5ce64adde43a0d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_115d97d9bb7a223c40074b78e4750f56.setIcon(icon_1019b0a1377940bfcb5ce64adde43a0d);
+        
+    
+            marker_115d97d9bb7a223c40074b78e4750f56.bindTooltip(
+                `<div>
+                     Свободный
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_21d419d2fe4aee6c16bc76fa71a85b47 = L.marker(
+                [50.25778, 127.53639],
+                {}
+            ).addTo(marker_cluster_f68c0194942428dc989688faac3aba29);
+        
+    
+            var icon_fe46b3a2fafe1f3bacdd44f1fd5d4fcc = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_21d419d2fe4aee6c16bc76fa71a85b47.setIcon(icon_fe46b3a2fafe1f3bacdd44f1fd5d4fcc);
+        
+    
+            marker_21d419d2fe4aee6c16bc76fa71a85b47.bindTooltip(
+                `<div>
+                     Благовещенск
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_31efb346b1975896d19aec2a7e1a5ab3 = L.marker(
+                [50.25778, 127.53639],
+                {}
+            ).addTo(marker_cluster_f68c0194942428dc989688faac3aba29);
+        
+    
+            var icon_5a94c658a9366d2830199e970223f7e0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_31efb346b1975896d19aec2a7e1a5ab3.setIcon(icon_5a94c658a9366d2830199e970223f7e0);
+        
+    
+            marker_31efb346b1975896d19aec2a7e1a5ab3.bindTooltip(
+                `<div>
+                     Благовещенск
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_9aee76f4b6d1c8fd1bbcc4f7a629f15f = L.marker(
+                [43.11667, 131.9],
+                {}
+            ).addTo(marker_cluster_f68c0194942428dc989688faac3aba29);
+        
+    
+            var icon_d953a9a9d7ea75084331c4ba0f54c355 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_9aee76f4b6d1c8fd1bbcc4f7a629f15f.setIcon(icon_d953a9a9d7ea75084331c4ba0f54c355);
+        
+    
+            marker_9aee76f4b6d1c8fd1bbcc4f7a629f15f.bindTooltip(
+                `<div>
+                     Владивосток
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d82f363619419e299d6dfc5b370cd768 = L.marker(
+                [53.01667, 158.65],
+                {}
+            ).addTo(marker_cluster_f68c0194942428dc989688faac3aba29);
+        
+    
+            var icon_df90dea4bf533e86f615bcb30f5d43c7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_d82f363619419e299d6dfc5b370cd768.setIcon(icon_df90dea4bf533e86f615bcb30f5d43c7);
+        
+    
+            marker_d82f363619419e299d6dfc5b370cd768.bindTooltip(
+                `<div>
+                     Петропавловск-Камчатский
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_988ce4f8eb14c44b6bda866622bab173 = L.marker(
+                [50.25778, 127.53639],
+                {}
+            ).addTo(marker_cluster_f68c0194942428dc989688faac3aba29);
+        
+    
+            var icon_01fe94a940e8f242c21e2e87e63f024e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_988ce4f8eb14c44b6bda866622bab173.setIcon(icon_01fe94a940e8f242c21e2e87e63f024e);
+        
+    
+            marker_988ce4f8eb14c44b6bda866622bab173.bindTooltip(
+                `<div>
+                     Благовещенск
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_60b86cd6c405bde433979daba549e013 = L.marker(
+                [51.7602528, 128.121175],
+                {}
+            ).addTo(marker_cluster_f68c0194942428dc989688faac3aba29);
+        
+    
+            var icon_6e17edd666f0a983e957c494ce83c386 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_60b86cd6c405bde433979daba549e013.setIcon(icon_6e17edd666f0a983e957c494ce83c386);
+        
+    
+            marker_60b86cd6c405bde433979daba549e013.bindTooltip(
+                `<div>
+                     Циолковский
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_cb946ebbecafd8d97465ad2415496876 = L.marker(
+                [50.25778, 127.53639],
+                {}
+            ).addTo(marker_cluster_f68c0194942428dc989688faac3aba29);
+        
+    
+            var icon_dadf60d0f3c0c95eebb3568860411b9c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_cb946ebbecafd8d97465ad2415496876.setIcon(icon_dadf60d0f3c0c95eebb3568860411b9c);
+        
+    
+            marker_cb946ebbecafd8d97465ad2415496876.bindTooltip(
+                `<div>
+                     Благовещенск
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ed4a8e26e55f72c0340318c328ba3154 = L.marker(
+                [51.38333, 128.13333],
+                {}
+            ).addTo(marker_cluster_f68c0194942428dc989688faac3aba29);
+        
+    
+            var icon_766425a5542420fd6f5494f076fdf58f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_ed4a8e26e55f72c0340318c328ba3154.setIcon(icon_766425a5542420fd6f5494f076fdf58f);
+        
+    
+            marker_ed4a8e26e55f72c0340318c328ba3154.bindTooltip(
+                `<div>
+                     Свободный
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_6c98f8b986fdaab33e7a1982a5a7adc7 = L.marker(
+                [44.94806, 34.10417],
+                {}
+            ).addTo(marker_cluster_f68c0194942428dc989688faac3aba29);
+        
+    
+            var icon_9818ab8f698dc76edbd93fbcd0aaf4df = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_6c98f8b986fdaab33e7a1982a5a7adc7.setIcon(icon_9818ab8f698dc76edbd93fbcd0aaf4df);
+        
+    
+            marker_6c98f8b986fdaab33e7a1982a5a7adc7.bindTooltip(
+                `<div>
+                     Симферополь
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_488f6672228052a4003bd7cf7721830d = L.marker(
+                [45.04889, 35.37917],
+                {}
+            ).addTo(marker_cluster_f68c0194942428dc989688faac3aba29);
+        
+    
+            var icon_0ff88ec46a40570534ff750342b314c7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_488f6672228052a4003bd7cf7721830d.setIcon(icon_0ff88ec46a40570534ff750342b314c7);
+        
+    
+            marker_488f6672228052a4003bd7cf7721830d.bindTooltip(
+                `<div>
+                     Феодосия
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e5670f953053b8e2b9b5fd4af573ca9b = L.marker(
+                [50.25778, 127.53639],
+                {}
+            ).addTo(marker_cluster_f68c0194942428dc989688faac3aba29);
+        
+    
+            var icon_5b7ec20aa6d1681a07732e0c3ac9e375 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_e5670f953053b8e2b9b5fd4af573ca9b.setIcon(icon_5b7ec20aa6d1681a07732e0c3ac9e375);
+        
+    
+            marker_e5670f953053b8e2b9b5fd4af573ca9b.bindTooltip(
+                `<div>
+                     Благовещенск
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_7d1ca3efcf353767062343b27eab1da6 = L.marker(
+                [50.25778, 127.53639],
+                {}
+            ).addTo(marker_cluster_f68c0194942428dc989688faac3aba29);
+        
+    
+            var icon_3bb5b60698b4505a9d0a4234aae2b431 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_7d1ca3efcf353767062343b27eab1da6.setIcon(icon_3bb5b60698b4505a9d0a4234aae2b431);
+        
+    
+            marker_7d1ca3efcf353767062343b27eab1da6.bindTooltip(
+                `<div>
+                     Благовещенск
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_7085e7a28579aa7266a5b94840edbbdb = L.marker(
+                [53.01667, 158.65],
+                {}
+            ).addTo(marker_cluster_f68c0194942428dc989688faac3aba29);
+        
+    
+            var icon_4fd14198de626f49c0d21c8f38245b0b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_7085e7a28579aa7266a5b94840edbbdb.setIcon(icon_4fd14198de626f49c0d21c8f38245b0b);
+        
+    
+            marker_7085e7a28579aa7266a5b94840edbbdb.bindTooltip(
+                `<div>
+                     Петропавловск-Камчатский
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_17e51abde27ef29d42f27b61c9ccc524 = L.marker(
+                [59.56667, 150.8],
+                {}
+            ).addTo(marker_cluster_f68c0194942428dc989688faac3aba29);
+        
+    
+            var icon_0f9307ae446e5d1164ab790d7db4a106 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_17e51abde27ef29d42f27b61c9ccc524.setIcon(icon_0f9307ae446e5d1164ab790d7db4a106);
+        
+    
+            marker_17e51abde27ef29d42f27b61c9ccc524.bindTooltip(
+                `<div>
+                     Магадан
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_6acf01fbfc8ad2f03afd7209cabaa4ef = L.marker(
+                [50.25778, 127.53639],
+                {}
+            ).addTo(marker_cluster_f68c0194942428dc989688faac3aba29);
+        
+    
+            var icon_0b2adcfe71c7eaa0cdb613be044ddda3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_6acf01fbfc8ad2f03afd7209cabaa4ef.setIcon(icon_0b2adcfe71c7eaa0cdb613be044ddda3);
+        
+    
+            marker_6acf01fbfc8ad2f03afd7209cabaa4ef.bindTooltip(
+                `<div>
+                     Благовещенск
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d2376fd1a2519d79d9f567fe9dcd3a2e = L.marker(
+                [50.25778, 127.53639],
+                {}
+            ).addTo(marker_cluster_f68c0194942428dc989688faac3aba29);
+        
+    
+            var icon_c2b62d9f4658c18ddd1d84964a69fc31 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_d2376fd1a2519d79d9f567fe9dcd3a2e.setIcon(icon_c2b62d9f4658c18ddd1d84964a69fc31);
+        
+    
+            marker_d2376fd1a2519d79d9f567fe9dcd3a2e.bindTooltip(
+                `<div>
+                     Благовещенск
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_0b24172643bad24b999294ec1e1af15a = L.marker(
+                [43.11667, 131.9],
+                {}
+            ).addTo(marker_cluster_f68c0194942428dc989688faac3aba29);
+        
+    
+            var icon_8bab47997af727eb83c5f71d5513126b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_0b24172643bad24b999294ec1e1af15a.setIcon(icon_8bab47997af727eb83c5f71d5513126b);
+        
+    
+            marker_0b24172643bad24b999294ec1e1af15a.bindTooltip(
+                `<div>
+                     Владивосток
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_5297fbafd63546997ccaa76b05901333 = L.marker(
+                [53.01667, 158.65],
+                {}
+            ).addTo(marker_cluster_f68c0194942428dc989688faac3aba29);
+        
+    
+            var icon_f196d1d6cf54e7586d977623f5b3a5ff = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_5297fbafd63546997ccaa76b05901333.setIcon(icon_f196d1d6cf54e7586d977623f5b3a5ff);
+        
+    
+            marker_5297fbafd63546997ccaa76b05901333.bindTooltip(
+                `<div>
+                     Петропавловск-Камчатский
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_dedfd96f861d1c1bac675ad8d7df5b7a = L.marker(
+                [53.01667, 158.65],
+                {}
+            ).addTo(marker_cluster_f68c0194942428dc989688faac3aba29);
+        
+    
+            var icon_69d16c347ec7c356d506b5f81de12284 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_dedfd96f861d1c1bac675ad8d7df5b7a.setIcon(icon_69d16c347ec7c356d506b5f81de12284);
+        
+    
+            marker_dedfd96f861d1c1bac675ad8d7df5b7a.bindTooltip(
+                `<div>
+                     Петропавловск-Камчатский
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ee6e6957e804c257422a47f2291379f1 = L.marker(
+                [59.56667, 150.8],
+                {}
+            ).addTo(marker_cluster_f68c0194942428dc989688faac3aba29);
+        
+    
+            var icon_e4985bb2890b15cc7554a10bea9fce3d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_ee6e6957e804c257422a47f2291379f1.setIcon(icon_e4985bb2890b15cc7554a10bea9fce3d);
+        
+    
+            marker_ee6e6957e804c257422a47f2291379f1.bindTooltip(
+                `<div>
+                     Магадан
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_abc6e424cd34e18e0b96009580e9624f = L.marker(
+                [50.25778, 127.53639],
+                {}
+            ).addTo(marker_cluster_f68c0194942428dc989688faac3aba29);
+        
+    
+            var icon_4f16189bf565aa3cdd87ea5fb3b33e5d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_abc6e424cd34e18e0b96009580e9624f.setIcon(icon_4f16189bf565aa3cdd87ea5fb3b33e5d);
+        
+    
+            marker_abc6e424cd34e18e0b96009580e9624f.bindTooltip(
+                `<div>
+                     Благовещенск
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_dbef10fb971f7be32d856a917f3b89c6 = L.marker(
+                [50.25778, 127.53639],
+                {}
+            ).addTo(marker_cluster_f68c0194942428dc989688faac3aba29);
+        
+    
+            var icon_116f4cff7a140d3f70804e426689bdfe = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_dbef10fb971f7be32d856a917f3b89c6.setIcon(icon_116f4cff7a140d3f70804e426689bdfe);
+        
+    
+            marker_dbef10fb971f7be32d856a917f3b89c6.bindTooltip(
+                `<div>
+                     Благовещенск
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_b533e7dd152062a453e4a176695b005d = L.marker(
+                [45.93333, 133.73333],
+                {}
+            ).addTo(marker_cluster_f68c0194942428dc989688faac3aba29);
+        
+    
+            var icon_f7ab159bccef990e8841c2430698fc54 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_b533e7dd152062a453e4a176695b005d.setIcon(icon_f7ab159bccef990e8841c2430698fc54);
+        
+    
+            marker_b533e7dd152062a453e4a176695b005d.bindTooltip(
+                `<div>
+                     Дальнереченск
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_9b7e6615329b99c7e307dd707debf930 = L.marker(
+                [45.93333, 133.73333],
+                {}
+            ).addTo(marker_cluster_f68c0194942428dc989688faac3aba29);
+        
+    
+            var icon_9fc2aed3c076a40df941040cef4536d9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_9b7e6615329b99c7e307dd707debf930.setIcon(icon_9fc2aed3c076a40df941040cef4536d9);
+        
+    
+            marker_9b7e6615329b99c7e307dd707debf930.bindTooltip(
+                `<div>
+                     Дальнереченск
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_6fd813cd61a16352dcceab44df4fb18d = L.marker(
+                [50.25778, 127.53639],
+                {}
+            ).addTo(marker_cluster_f68c0194942428dc989688faac3aba29);
+        
+    
+            var icon_8504bf2d04a11a7ab76ea04d850b15bd = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_6fd813cd61a16352dcceab44df4fb18d.setIcon(icon_8504bf2d04a11a7ab76ea04d850b15bd);
+        
+    
+            marker_6fd813cd61a16352dcceab44df4fb18d.bindTooltip(
+                `<div>
+                     Благовещенск
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_b8db18a2cfe873a6004e4f71cb13d85a = L.marker(
+                [52.0, 127.66667],
+                {}
+            ).addTo(marker_cluster_f68c0194942428dc989688faac3aba29);
+        
+    
+            var icon_0010235be138be2cdda03b835f03a68b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_b8db18a2cfe873a6004e4f71cb13d85a.setIcon(icon_0010235be138be2cdda03b835f03a68b);
+        
+    
+            marker_b8db18a2cfe873a6004e4f71cb13d85a.bindTooltip(
+                `<div>
+                     Шимановск
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_1fb7b245fbab82170f1ca4c7ae6b2ff4 = L.marker(
+                [50.25778, 127.53639],
+                {}
+            ).addTo(marker_cluster_f68c0194942428dc989688faac3aba29);
+        
+    
+            var icon_9d8399d01e586d281c7c15947952b6d6 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_1fb7b245fbab82170f1ca4c7ae6b2ff4.setIcon(icon_9d8399d01e586d281c7c15947952b6d6);
+        
+    
+            marker_1fb7b245fbab82170f1ca4c7ae6b2ff4.bindTooltip(
+                `<div>
+                     Благовещенск
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_1de5125454d7573dc1b3576bbd49d2d6 = L.marker(
+                [50.25778, 127.53639],
+                {}
+            ).addTo(marker_cluster_f68c0194942428dc989688faac3aba29);
+        
+    
+            var icon_51b8ca2609caa7e361e89a731d0922ef = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_1de5125454d7573dc1b3576bbd49d2d6.setIcon(icon_51b8ca2609caa7e361e89a731d0922ef);
+        
+    
+            marker_1de5125454d7573dc1b3576bbd49d2d6.bindTooltip(
+                `<div>
+                     Благовещенск
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_31113bc4d9afbeabad192caaf3681d5b = L.marker(
+                [53.01667, 158.65],
+                {}
+            ).addTo(marker_cluster_f68c0194942428dc989688faac3aba29);
+        
+    
+            var icon_6f04fc3aa292b9c2d382550954d752de = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_31113bc4d9afbeabad192caaf3681d5b.setIcon(icon_6f04fc3aa292b9c2d382550954d752de);
+        
+    
+            marker_31113bc4d9afbeabad192caaf3681d5b.bindTooltip(
+                `<div>
+                     Петропавловск-Камчатский
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_4a3f77eff1d7914e01d94417ab128593 = L.marker(
+                [43.8, 131.95],
+                {}
+            ).addTo(marker_cluster_f68c0194942428dc989688faac3aba29);
+        
+    
+            var icon_25ced5c2285de6fd86ed4a85a7ad8548 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_4a3f77eff1d7914e01d94417ab128593.setIcon(icon_25ced5c2285de6fd86ed4a85a7ad8548);
+        
+    
+            marker_4a3f77eff1d7914e01d94417ab128593.bindTooltip(
+                `<div>
+                     Уссурийск
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_611ca43a1cd47db069b71e712c50535a = L.marker(
+                [55.44083, 65.34111],
+                {}
+            ).addTo(marker_cluster_f68c0194942428dc989688faac3aba29);
+        
+    
+            var icon_a9757a18a4d5905f6c87b71d44a6abf5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_611ca43a1cd47db069b71e712c50535a.setIcon(icon_a9757a18a4d5905f6c87b71d44a6abf5);
+        
+    
+            marker_611ca43a1cd47db069b71e712c50535a.bindTooltip(
+                `<div>
+                     Курган
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d793bc9392d57ee532a912e6b32fc879 = L.marker(
+                [55.44083, 65.34111],
+                {}
+            ).addTo(marker_cluster_f68c0194942428dc989688faac3aba29);
+        
+    
+            var icon_427ab2702981b8a8d23d433d3122df1f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_d793bc9392d57ee532a912e6b32fc879.setIcon(icon_427ab2702981b8a8d23d433d3122df1f);
+        
+    
+            marker_d793bc9392d57ee532a912e6b32fc879.bindTooltip(
+                `<div>
+                     Курган
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_71ad346da0b75b4f9402a0c94e2df607 = L.marker(
+                [43.11667, 131.9],
+                {}
+            ).addTo(marker_cluster_f68c0194942428dc989688faac3aba29);
+        
+    
+            var icon_14a47aafcb2b35a96673336e21a9a63e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_71ad346da0b75b4f9402a0c94e2df607.setIcon(icon_14a47aafcb2b35a96673336e21a9a63e);
+        
+    
+            marker_71ad346da0b75b4f9402a0c94e2df607.bindTooltip(
+                `<div>
+                     Владивосток
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_be50a7ead3068e22609f772765b36567 = L.marker(
+                [53.01667, 158.65],
+                {}
+            ).addTo(marker_cluster_f68c0194942428dc989688faac3aba29);
+        
+    
+            var icon_29e56f7cc14f6619c58e97c613cf5648 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_be50a7ead3068e22609f772765b36567.setIcon(icon_29e56f7cc14f6619c58e97c613cf5648);
+        
+    
+            marker_be50a7ead3068e22609f772765b36567.bindTooltip(
+                `<div>
+                     Петропавловск-Камчатский
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ea6a8cf674f67886cbe81b193bcbaaa8 = L.marker(
+                [50.25778, 127.53639],
+                {}
+            ).addTo(marker_cluster_f68c0194942428dc989688faac3aba29);
+        
+    
+            var icon_71c7b60b59f19cc7e655e0b6a8b9d82a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_ea6a8cf674f67886cbe81b193bcbaaa8.setIcon(icon_71c7b60b59f19cc7e655e0b6a8b9d82a);
+        
+    
+            marker_ea6a8cf674f67886cbe81b193bcbaaa8.bindTooltip(
+                `<div>
+                     Благовещенск
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_028edb1df477e2e89c39ab4ba19e6d0e = L.marker(
+                [53.73333, 127.25],
+                {}
+            ).addTo(marker_cluster_f68c0194942428dc989688faac3aba29);
+        
+    
+            var icon_cb4e9bf0d48734cc3d17b65e9dc0f831 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_028edb1df477e2e89c39ab4ba19e6d0e.setIcon(icon_cb4e9bf0d48734cc3d17b65e9dc0f831);
+        
+    
+            marker_028edb1df477e2e89c39ab4ba19e6d0e.bindTooltip(
+                `<div>
+                     Зея
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_8bacfc1b520fde58614f27446de23ea4 = L.marker(
+                [50.25778, 127.53639],
+                {}
+            ).addTo(marker_cluster_f68c0194942428dc989688faac3aba29);
+        
+    
+            var icon_7d99e8ff872356813ccf91a579ab0891 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_8bacfc1b520fde58614f27446de23ea4.setIcon(icon_7d99e8ff872356813ccf91a579ab0891);
+        
+    
+            marker_8bacfc1b520fde58614f27446de23ea4.bindTooltip(
+                `<div>
+                     Благовещенск
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f280cd37767e6ff93292d8ed353cb50c = L.marker(
+                [51.38333, 128.13333],
+                {}
+            ).addTo(marker_cluster_f68c0194942428dc989688faac3aba29);
+        
+    
+            var icon_716a7d47a5b0df818770321c5a058b8c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_f280cd37767e6ff93292d8ed353cb50c.setIcon(icon_716a7d47a5b0df818770321c5a058b8c);
+        
+    
+            marker_f280cd37767e6ff93292d8ed353cb50c.bindTooltip(
+                `<div>
+                     Свободный
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var feature_group_197b870a1fc9960f78869591b0087fa7 = L.featureGroup(
+                {}
+            ).addTo(map_dfa1e62e6d21a061f8e34a1f14df2a0c);
+        
+    
+            var marker_0dcd05093c48d96e8a23857579277863 = L.marker(
+                [56.15, 101.63],
+                {}
+            ).addTo(feature_group_197b870a1fc9960f78869591b0087fa7);
+        
+    
+            var icon_879e5abb109f7fdde483a436ded6769f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_0dcd05093c48d96e8a23857579277863.setIcon(icon_879e5abb109f7fdde483a436ded6769f);
+        
+    
+            marker_0dcd05093c48d96e8a23857579277863.bindTooltip(
+                `<div>
+                     Братск
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_b87754526ab8d098539e01f3b05d3dbc = L.marker(
+                [52.28333, 104.3],
+                {}
+            ).addTo(feature_group_197b870a1fc9960f78869591b0087fa7);
+        
+    
+            var icon_04cc06616d4dbdb5c6395e7ae8e0b8cf = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_b87754526ab8d098539e01f3b05d3dbc.setIcon(icon_04cc06616d4dbdb5c6395e7ae8e0b8cf);
+        
+    
+            marker_b87754526ab8d098539e01f3b05d3dbc.bindTooltip(
+                `<div>
+                     Иркутск
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_de3b721fb94fb4ea29d29f5648ffcc2c = L.marker(
+                [44.94806, 34.10417],
+                {}
+            ).addTo(feature_group_197b870a1fc9960f78869591b0087fa7);
+        
+    
+            var icon_4eca4424fceb55b0c327ed7226e36f86 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_de3b721fb94fb4ea29d29f5648ffcc2c.setIcon(icon_4eca4424fceb55b0c327ed7226e36f86);
+        
+    
+            marker_de3b721fb94fb4ea29d29f5648ffcc2c.bindTooltip(
+                `<div>
+                     Симферополь
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_64f191a280833c967d7a3de900315c0f = L.marker(
+                [45.04889, 35.37917],
+                {}
+            ).addTo(feature_group_197b870a1fc9960f78869591b0087fa7);
+        
+    
+            var icon_45e1ac51f0d41ac42ae8ca4ab86ff717 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_64f191a280833c967d7a3de900315c0f.setIcon(icon_45e1ac51f0d41ac42ae8ca4ab86ff717);
+        
+    
+            marker_64f191a280833c967d7a3de900315c0f.bindTooltip(
+                `<div>
+                     Феодосия
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_fbd2d394460ed2c832371d1e9fd6823c = L.marker(
+                [44.94806, 34.10417],
+                {}
+            ).addTo(feature_group_197b870a1fc9960f78869591b0087fa7);
+        
+    
+            var icon_a8ad4c222f63f2b388bd6a11a556e47c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_fbd2d394460ed2c832371d1e9fd6823c.setIcon(icon_a8ad4c222f63f2b388bd6a11a556e47c);
+        
+    
+            marker_fbd2d394460ed2c832371d1e9fd6823c.bindTooltip(
+                `<div>
+                     Симферополь
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_3fe968a67a25abe1b0fd01c3837bb927 = L.marker(
+                [44.94806, 34.10417],
+                {}
+            ).addTo(feature_group_197b870a1fc9960f78869591b0087fa7);
+        
+    
+            var icon_146e5c3761285aec3b0f494d8f188734 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_3fe968a67a25abe1b0fd01c3837bb927.setIcon(icon_146e5c3761285aec3b0f494d8f188734);
+        
+    
+            marker_3fe968a67a25abe1b0fd01c3837bb927.bindTooltip(
+                `<div>
+                     Симферополь
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_44fe3d77cde0676010744fe46e2904a8 = L.marker(
+                [50.25778, 127.53639],
+                {}
+            ).addTo(feature_group_197b870a1fc9960f78869591b0087fa7);
+        
+    
+            var icon_dd4a3add5355574b9a3fc024cde09ea7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_44fe3d77cde0676010744fe46e2904a8.setIcon(icon_dd4a3add5355574b9a3fc024cde09ea7);
+        
+    
+            marker_44fe3d77cde0676010744fe46e2904a8.bindTooltip(
+                `<div>
+                     Благовещенск
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_01e997437f15ee610320225c2abebd1c = L.marker(
+                [50.25778, 127.53639],
+                {}
+            ).addTo(feature_group_197b870a1fc9960f78869591b0087fa7);
+        
+    
+            var icon_b7df482014bbe49dfdd65e94907d8b9a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_01e997437f15ee610320225c2abebd1c.setIcon(icon_b7df482014bbe49dfdd65e94907d8b9a);
+        
+    
+            marker_01e997437f15ee610320225c2abebd1c.bindTooltip(
+                `<div>
+                     Благовещенск
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_597d98d4ae5ae9421b06e707ffae9d95 = L.marker(
+                [50.25778, 127.53639],
+                {}
+            ).addTo(feature_group_197b870a1fc9960f78869591b0087fa7);
+        
+    
+            var icon_18a55a9bbd6ce52d7c74a36c88a6ef73 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_597d98d4ae5ae9421b06e707ffae9d95.setIcon(icon_18a55a9bbd6ce52d7c74a36c88a6ef73);
+        
+    
+            marker_597d98d4ae5ae9421b06e707ffae9d95.bindTooltip(
+                `<div>
+                     Благовещенск
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_24997a112056d47bf4696b5363aa221b = L.marker(
+                [53.73333, 127.25],
+                {}
+            ).addTo(feature_group_197b870a1fc9960f78869591b0087fa7);
+        
+    
+            var icon_7ad2513feaaea3dd51120ff64458efd3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_24997a112056d47bf4696b5363aa221b.setIcon(icon_7ad2513feaaea3dd51120ff64458efd3);
+        
+    
+            marker_24997a112056d47bf4696b5363aa221b.bindTooltip(
+                `<div>
+                     Зея
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ccd2913305ff51d350150b5292c071ca = L.marker(
+                [44.94806, 34.10417],
+                {}
+            ).addTo(feature_group_197b870a1fc9960f78869591b0087fa7);
+        
+    
+            var icon_7337dc80c2962d1e8d1dc8a4ac54b3b5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_ccd2913305ff51d350150b5292c071ca.setIcon(icon_7337dc80c2962d1e8d1dc8a4ac54b3b5);
+        
+    
+            marker_ccd2913305ff51d350150b5292c071ca.bindTooltip(
+                `<div>
+                     Симферополь
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_dc77fd21aa3a4d15d196872853d1ac77 = L.marker(
+                [44.94806, 34.10417],
+                {}
+            ).addTo(feature_group_197b870a1fc9960f78869591b0087fa7);
+        
+    
+            var icon_ba37cfd5ff31d84a498608f295b1eb71 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_dc77fd21aa3a4d15d196872853d1ac77.setIcon(icon_ba37cfd5ff31d84a498608f295b1eb71);
+        
+    
+            marker_dc77fd21aa3a4d15d196872853d1ac77.bindTooltip(
+                `<div>
+                     Симферополь
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c594df5d13e3fa00ed604423eb54c286 = L.marker(
+                [44.94806, 34.10417],
+                {}
+            ).addTo(feature_group_197b870a1fc9960f78869591b0087fa7);
+        
+    
+            var icon_ed14556e9d16ba57b14221a1f06a6fd8 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_c594df5d13e3fa00ed604423eb54c286.setIcon(icon_ed14556e9d16ba57b14221a1f06a6fd8);
+        
+    
+            marker_c594df5d13e3fa00ed604423eb54c286.bindTooltip(
+                `<div>
+                     Симферополь
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_6c2d0556f5ebc679b7eb0f5e73f48040 = L.marker(
+                [44.94806, 34.10417],
+                {}
+            ).addTo(feature_group_197b870a1fc9960f78869591b0087fa7);
+        
+    
+            var icon_c4bb6d4274a391d373113df36e7d9063 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_6c2d0556f5ebc679b7eb0f5e73f48040.setIcon(icon_c4bb6d4274a391d373113df36e7d9063);
+        
+    
+            marker_6c2d0556f5ebc679b7eb0f5e73f48040.bindTooltip(
+                `<div>
+                     Симферополь
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_19e380745b5d771eda6fcddb1ca45422 = L.marker(
+                [52.28333, 104.3],
+                {}
+            ).addTo(feature_group_197b870a1fc9960f78869591b0087fa7);
+        
+    
+            var icon_4e2ef049ef31dab9e41f722b457ca0ff = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_19e380745b5d771eda6fcddb1ca45422.setIcon(icon_4e2ef049ef31dab9e41f722b457ca0ff);
+        
+    
+            marker_19e380745b5d771eda6fcddb1ca45422.bindTooltip(
+                `<div>
+                     Иркутск
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d05da34f5ba35a8634d194878e1ab890 = L.marker(
+                [53.91667, 102.05],
+                {}
+            ).addTo(feature_group_197b870a1fc9960f78869591b0087fa7);
+        
+    
+            var icon_42d8b81a4b05f8fc1b63296663775e6e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_d05da34f5ba35a8634d194878e1ab890.setIcon(icon_42d8b81a4b05f8fc1b63296663775e6e);
+        
+    
+            marker_d05da34f5ba35a8634d194878e1ab890.bindTooltip(
+                `<div>
+                     Зима
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_281bced51669bd669e51e4ddf7d4a644 = L.marker(
+                [43.11667, 131.9],
+                {}
+            ).addTo(feature_group_197b870a1fc9960f78869591b0087fa7);
+        
+    
+            var icon_729cbdd7a2ba6a898b787593940cb238 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_281bced51669bd669e51e4ddf7d4a644.setIcon(icon_729cbdd7a2ba6a898b787593940cb238);
+        
+    
+            marker_281bced51669bd669e51e4ddf7d4a644.bindTooltip(
+                `<div>
+                     Владивосток
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_26552ed142c9c2537aee5156ad792cd2 = L.marker(
+                [53.01667, 158.65],
+                {}
+            ).addTo(feature_group_197b870a1fc9960f78869591b0087fa7);
+        
+    
+            var icon_9983d3deb63f29bac5b1d0d9db38851d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_26552ed142c9c2537aee5156ad792cd2.setIcon(icon_9983d3deb63f29bac5b1d0d9db38851d);
+        
+    
+            marker_26552ed142c9c2537aee5156ad792cd2.bindTooltip(
+                `<div>
+                     Петропавловск-Камчатский
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e1a0770ca879a202c048c489a6dfb11a = L.marker(
+                [55.44083, 65.34111],
+                {}
+            ).addTo(feature_group_197b870a1fc9960f78869591b0087fa7);
+        
+    
+            var icon_125c30489a38b2d58745144e21a3eda4 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_e1a0770ca879a202c048c489a6dfb11a.setIcon(icon_125c30489a38b2d58745144e21a3eda4);
+        
+    
+            marker_e1a0770ca879a202c048c489a6dfb11a.bindTooltip(
+                `<div>
+                     Курган
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_6a0d37d9e41fc7efc15786fe49f38074 = L.marker(
+                [55.44083, 65.34111],
+                {}
+            ).addTo(feature_group_197b870a1fc9960f78869591b0087fa7);
+        
+    
+            var icon_0db76baab856042df0ccaa769314cfbc = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_6a0d37d9e41fc7efc15786fe49f38074.setIcon(icon_0db76baab856042df0ccaa769314cfbc);
+        
+    
+            marker_6a0d37d9e41fc7efc15786fe49f38074.bindTooltip(
+                `<div>
+                     Курган
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_173f720801de776f7e60dcd93e28d640 = L.marker(
+                [53.01667, 158.65],
+                {}
+            ).addTo(feature_group_197b870a1fc9960f78869591b0087fa7);
+        
+    
+            var icon_58c87e05da7921829bb164c9a278faec = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_173f720801de776f7e60dcd93e28d640.setIcon(icon_58c87e05da7921829bb164c9a278faec);
+        
+    
+            marker_173f720801de776f7e60dcd93e28d640.bindTooltip(
+                `<div>
+                     Петропавловск-Камчатский
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_23baf365b24f92c83fbc24a03ed5e924 = L.marker(
+                [52.93333, 158.4],
+                {}
+            ).addTo(feature_group_197b870a1fc9960f78869591b0087fa7);
+        
+    
+            var icon_7c07568e86fc969c57235b1600a0ada3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_23baf365b24f92c83fbc24a03ed5e924.setIcon(icon_7c07568e86fc969c57235b1600a0ada3);
+        
+    
+            marker_23baf365b24f92c83fbc24a03ed5e924.bindTooltip(
+                `<div>
+                     Вилючинск
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f7a9179fe378a80ddd36bf6049d31174 = L.marker(
+                [43.11667, 131.9],
+                {}
+            ).addTo(feature_group_197b870a1fc9960f78869591b0087fa7);
+        
+    
+            var icon_5cf9ee152831015029a1508b833a88ba = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_f7a9179fe378a80ddd36bf6049d31174.setIcon(icon_5cf9ee152831015029a1508b833a88ba);
+        
+    
+            marker_f7a9179fe378a80ddd36bf6049d31174.bindTooltip(
+                `<div>
+                     Владивосток
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ac12de7c137b15d27e52e340d4c3d1e0 = L.marker(
+                [53.01667, 158.65],
+                {}
+            ).addTo(feature_group_197b870a1fc9960f78869591b0087fa7);
+        
+    
+            var icon_7bd246c4b3a05bf58b1a7f4d68c59dc4 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_ac12de7c137b15d27e52e340d4c3d1e0.setIcon(icon_7bd246c4b3a05bf58b1a7f4d68c59dc4);
+        
+    
+            marker_ac12de7c137b15d27e52e340d4c3d1e0.bindTooltip(
+                `<div>
+                     Петропавловск-Камчатский
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d8b9ccf2fafc5e2b168c8a7cf17265b7 = L.marker(
+                [50.25778, 127.53639],
+                {}
+            ).addTo(feature_group_197b870a1fc9960f78869591b0087fa7);
+        
+    
+            var icon_80f6d3f5a8eb7c80cb4273eba2da1940 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_d8b9ccf2fafc5e2b168c8a7cf17265b7.setIcon(icon_80f6d3f5a8eb7c80cb4273eba2da1940);
+        
+    
+            marker_d8b9ccf2fafc5e2b168c8a7cf17265b7.bindTooltip(
+                `<div>
+                     Благовещенск
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e621c45cb8f7eff7b9de12db578a37af = L.marker(
+                [51.38333, 128.13333],
+                {}
+            ).addTo(feature_group_197b870a1fc9960f78869591b0087fa7);
+        
+    
+            var icon_50d45e295bae1c1ba423090029cc6a1f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_e621c45cb8f7eff7b9de12db578a37af.setIcon(icon_50d45e295bae1c1ba423090029cc6a1f);
+        
+    
+            marker_e621c45cb8f7eff7b9de12db578a37af.bindTooltip(
+                `<div>
+                     Свободный
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_feb0867122048d2d62e1d774cef1bc34 = L.marker(
+                [50.25778, 127.53639],
+                {}
+            ).addTo(feature_group_197b870a1fc9960f78869591b0087fa7);
+        
+    
+            var icon_52d5eff357483ac0d378cefe4088a4d6 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_feb0867122048d2d62e1d774cef1bc34.setIcon(icon_52d5eff357483ac0d378cefe4088a4d6);
+        
+    
+            marker_feb0867122048d2d62e1d774cef1bc34.bindTooltip(
+                `<div>
+                     Благовещенск
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_1e1a04e0ca26c2a1d07d139394899796 = L.marker(
+                [52.0, 127.66667],
+                {}
+            ).addTo(feature_group_197b870a1fc9960f78869591b0087fa7);
+        
+    
+            var icon_300f47f0a14d04c78b7f1333c025b557 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_1e1a04e0ca26c2a1d07d139394899796.setIcon(icon_300f47f0a14d04c78b7f1333c025b557);
+        
+    
+            marker_1e1a04e0ca26c2a1d07d139394899796.bindTooltip(
+                `<div>
+                     Шимановск
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_3c9a8025eea875f20a1362e50388658a = L.marker(
+                [43.11667, 131.9],
+                {}
+            ).addTo(feature_group_197b870a1fc9960f78869591b0087fa7);
+        
+    
+            var icon_7547be09682889091a4d551b20694aa3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_3c9a8025eea875f20a1362e50388658a.setIcon(icon_7547be09682889091a4d551b20694aa3);
+        
+    
+            marker_3c9a8025eea875f20a1362e50388658a.bindTooltip(
+                `<div>
+                     Владивосток
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_28875238b68de91d7073d4f48b34f5fb = L.marker(
+                [53.01667, 158.65],
+                {}
+            ).addTo(feature_group_197b870a1fc9960f78869591b0087fa7);
+        
+    
+            var icon_aacd38b1100ddf02551f78511ebc4fac = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_28875238b68de91d7073d4f48b34f5fb.setIcon(icon_aacd38b1100ddf02551f78511ebc4fac);
+        
+    
+            marker_28875238b68de91d7073d4f48b34f5fb.bindTooltip(
+                `<div>
+                     Петропавловск-Камчатский
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_6f09e9a42feedcbbe25a41f93a39564d = L.marker(
+                [50.25778, 127.53639],
+                {}
+            ).addTo(feature_group_197b870a1fc9960f78869591b0087fa7);
+        
+    
+            var icon_29a2f139d046d6a8d3fa085e3ffbee6f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_6f09e9a42feedcbbe25a41f93a39564d.setIcon(icon_29a2f139d046d6a8d3fa085e3ffbee6f);
+        
+    
+            marker_6f09e9a42feedcbbe25a41f93a39564d.bindTooltip(
+                `<div>
+                     Благовещенск
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_956e3e81b7d493ff6579be6a85f7d5dd = L.marker(
+                [53.73333, 127.25],
+                {}
+            ).addTo(feature_group_197b870a1fc9960f78869591b0087fa7);
+        
+    
+            var icon_e7ba5713933e1639b2d83506194e86ad = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_956e3e81b7d493ff6579be6a85f7d5dd.setIcon(icon_e7ba5713933e1639b2d83506194e86ad);
+        
+    
+            marker_956e3e81b7d493ff6579be6a85f7d5dd.bindTooltip(
+                `<div>
+                     Зея
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c933ad8a7ba2730b12192f0931f2de41 = L.marker(
+                [55.44083, 65.34111],
+                {}
+            ).addTo(feature_group_197b870a1fc9960f78869591b0087fa7);
+        
+    
+            var icon_8acdd1d136495d4cb110d53b8585ed77 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_c933ad8a7ba2730b12192f0931f2de41.setIcon(icon_8acdd1d136495d4cb110d53b8585ed77);
+        
+    
+            marker_c933ad8a7ba2730b12192f0931f2de41.bindTooltip(
+                `<div>
+                     Курган
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_436a4f5705be395a6a483ec1d3f49df1 = L.marker(
+                [55.44083, 65.34111],
+                {}
+            ).addTo(feature_group_197b870a1fc9960f78869591b0087fa7);
+        
+    
+            var icon_994b30fcb95e7ef821987cb7f93a4444 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_436a4f5705be395a6a483ec1d3f49df1.setIcon(icon_994b30fcb95e7ef821987cb7f93a4444);
+        
+    
+            marker_436a4f5705be395a6a483ec1d3f49df1.bindTooltip(
+                `<div>
+                     Курган
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_6a59c4d9be5fe5d72cbdcf1acf0d4b4e = L.marker(
+                [44.94806, 34.10417],
+                {}
+            ).addTo(feature_group_197b870a1fc9960f78869591b0087fa7);
+        
+    
+            var icon_025780e2eab2adfcf5e92fc130a6bd6d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_6a59c4d9be5fe5d72cbdcf1acf0d4b4e.setIcon(icon_025780e2eab2adfcf5e92fc130a6bd6d);
+        
+    
+            marker_6a59c4d9be5fe5d72cbdcf1acf0d4b4e.bindTooltip(
+                `<div>
+                     Симферополь
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_685af984bd2babbd891b984505f29706 = L.marker(
+                [44.94806, 34.10417],
+                {}
+            ).addTo(feature_group_197b870a1fc9960f78869591b0087fa7);
+        
+    
+            var icon_c5ef3928eb7431343c0ccb287e47f5bb = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_685af984bd2babbd891b984505f29706.setIcon(icon_c5ef3928eb7431343c0ccb287e47f5bb);
+        
+    
+            marker_685af984bd2babbd891b984505f29706.bindTooltip(
+                `<div>
+                     Симферополь
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_144eedc0519acc7488471fdabb5bcdda = L.marker(
+                [50.25778, 127.53639],
+                {}
+            ).addTo(feature_group_197b870a1fc9960f78869591b0087fa7);
+        
+    
+            var icon_ecd640c041eb6961e8186126f0d2d5b0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_144eedc0519acc7488471fdabb5bcdda.setIcon(icon_ecd640c041eb6961e8186126f0d2d5b0);
+        
+    
+            marker_144eedc0519acc7488471fdabb5bcdda.bindTooltip(
+                `<div>
+                     Благовещенск
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_fa5c9b884ebdb1a4171129c5799fbef2 = L.marker(
+                [50.91667, 128.48333],
+                {}
+            ).addTo(feature_group_197b870a1fc9960f78869591b0087fa7);
+        
+    
+            var icon_79f06ab591ca67c00f109cdf46c2c431 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_fa5c9b884ebdb1a4171129c5799fbef2.setIcon(icon_79f06ab591ca67c00f109cdf46c2c431);
+        
+    
+            marker_fa5c9b884ebdb1a4171129c5799fbef2.bindTooltip(
+                `<div>
+                     Белогорск
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_55be17c068d2be075375d3e56a77a79d = L.marker(
+                [50.25778, 127.53639],
+                {}
+            ).addTo(feature_group_197b870a1fc9960f78869591b0087fa7);
+        
+    
+            var icon_304563b09ca9afc465d05e0e2f692e68 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_55be17c068d2be075375d3e56a77a79d.setIcon(icon_304563b09ca9afc465d05e0e2f692e68);
+        
+    
+            marker_55be17c068d2be075375d3e56a77a79d.bindTooltip(
+                `<div>
+                     Благовещенск
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_76929505210086c46ca2fc38c1f567d5 = L.marker(
+                [52.0, 127.66667],
+                {}
+            ).addTo(feature_group_197b870a1fc9960f78869591b0087fa7);
+        
+    
+            var icon_610a1bf1788e18106b44ea19dadb684e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_76929505210086c46ca2fc38c1f567d5.setIcon(icon_610a1bf1788e18106b44ea19dadb684e);
+        
+    
+            marker_76929505210086c46ca2fc38c1f567d5.bindTooltip(
+                `<div>
+                     Шимановск
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_4da82413c646a8450542c59bc9b6daae = L.marker(
+                [50.25778, 127.53639],
+                {}
+            ).addTo(feature_group_197b870a1fc9960f78869591b0087fa7);
+        
+    
+            var icon_55c345fb31c763c4d4c9e0e15a3ed9c0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_4da82413c646a8450542c59bc9b6daae.setIcon(icon_55c345fb31c763c4d4c9e0e15a3ed9c0);
+        
+    
+            marker_4da82413c646a8450542c59bc9b6daae.bindTooltip(
+                `<div>
+                     Благовещенск
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_5145c357e9d3fc025c80857855a2bb96 = L.marker(
+                [50.25778, 127.53639],
+                {}
+            ).addTo(feature_group_197b870a1fc9960f78869591b0087fa7);
+        
+    
+            var icon_9e9e2264c556a0697e402a10b5816a2f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_5145c357e9d3fc025c80857855a2bb96.setIcon(icon_9e9e2264c556a0697e402a10b5816a2f);
+        
+    
+            marker_5145c357e9d3fc025c80857855a2bb96.bindTooltip(
+                `<div>
+                     Благовещенск
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_7317d06c5c571cb48b7cced08b03f4c6 = L.marker(
+                [50.25778, 127.53639],
+                {}
+            ).addTo(feature_group_197b870a1fc9960f78869591b0087fa7);
+        
+    
+            var icon_582dd734b59c891dab82980b9fb15142 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_7317d06c5c571cb48b7cced08b03f4c6.setIcon(icon_582dd734b59c891dab82980b9fb15142);
+        
+    
+            marker_7317d06c5c571cb48b7cced08b03f4c6.bindTooltip(
+                `<div>
+                     Благовещенск
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_064f6ac3f5f2265acc73a8fa7a820840 = L.marker(
+                [51.38333, 128.13333],
+                {}
+            ).addTo(feature_group_197b870a1fc9960f78869591b0087fa7);
+        
+    
+            var icon_357bda4f8cd216e6d7e89465b7ea1f27 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_064f6ac3f5f2265acc73a8fa7a820840.setIcon(icon_357bda4f8cd216e6d7e89465b7ea1f27);
+        
+    
+            marker_064f6ac3f5f2265acc73a8fa7a820840.bindTooltip(
+                `<div>
+                     Свободный
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d6788ff2aba6926ff77e2397e6ab8fc5 = L.marker(
+                [50.25778, 127.53639],
+                {}
+            ).addTo(feature_group_197b870a1fc9960f78869591b0087fa7);
+        
+    
+            var icon_9b9cf776a6c664242697ccad7cfff565 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_d6788ff2aba6926ff77e2397e6ab8fc5.setIcon(icon_9b9cf776a6c664242697ccad7cfff565);
+        
+    
+            marker_d6788ff2aba6926ff77e2397e6ab8fc5.bindTooltip(
+                `<div>
+                     Благовещенск
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_7c59c5403f1f294e1c9cbdb7cf9cef9c = L.marker(
+                [50.25778, 127.53639],
+                {}
+            ).addTo(feature_group_197b870a1fc9960f78869591b0087fa7);
+        
+    
+            var icon_28c453218d9d32450040647193aee283 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_7c59c5403f1f294e1c9cbdb7cf9cef9c.setIcon(icon_28c453218d9d32450040647193aee283);
+        
+    
+            marker_7c59c5403f1f294e1c9cbdb7cf9cef9c.bindTooltip(
+                `<div>
+                     Благовещенск
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_930a4692e2dc8109f68a409f110a40fe = L.marker(
+                [43.11667, 131.9],
+                {}
+            ).addTo(feature_group_197b870a1fc9960f78869591b0087fa7);
+        
+    
+            var icon_138065dde84732a2b3b73b8613301b39 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_930a4692e2dc8109f68a409f110a40fe.setIcon(icon_138065dde84732a2b3b73b8613301b39);
+        
+    
+            marker_930a4692e2dc8109f68a409f110a40fe.bindTooltip(
+                `<div>
+                     Владивосток
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_5ca028b4800c9e3ded95fec5dd7b1ec7 = L.marker(
+                [53.01667, 158.65],
+                {}
+            ).addTo(feature_group_197b870a1fc9960f78869591b0087fa7);
+        
+    
+            var icon_01e601880e106d0cf263c70b690d1c25 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_5ca028b4800c9e3ded95fec5dd7b1ec7.setIcon(icon_01e601880e106d0cf263c70b690d1c25);
+        
+    
+            marker_5ca028b4800c9e3ded95fec5dd7b1ec7.bindTooltip(
+                `<div>
+                     Петропавловск-Камчатский
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_46d65a2c510f3952a498ee5b7ef4eac1 = L.marker(
+                [50.25778, 127.53639],
+                {}
+            ).addTo(feature_group_197b870a1fc9960f78869591b0087fa7);
+        
+    
+            var icon_77422e5d7b5159f74673bf927451a6eb = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_46d65a2c510f3952a498ee5b7ef4eac1.setIcon(icon_77422e5d7b5159f74673bf927451a6eb);
+        
+    
+            marker_46d65a2c510f3952a498ee5b7ef4eac1.bindTooltip(
+                `<div>
+                     Благовещенск
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_3ba2a5456da07e199071676f672a6f76 = L.marker(
+                [51.7602528, 128.121175],
+                {}
+            ).addTo(feature_group_197b870a1fc9960f78869591b0087fa7);
+        
+    
+            var icon_be98388cd680594e147584864453d8ec = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_3ba2a5456da07e199071676f672a6f76.setIcon(icon_be98388cd680594e147584864453d8ec);
+        
+    
+            marker_3ba2a5456da07e199071676f672a6f76.bindTooltip(
+                `<div>
+                     Циолковский
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_cadda7729f412c2b72aef2499c5fb7d5 = L.marker(
+                [50.25778, 127.53639],
+                {}
+            ).addTo(feature_group_197b870a1fc9960f78869591b0087fa7);
+        
+    
+            var icon_2b58bd7d402098c7c2f667507a4f0e6b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_cadda7729f412c2b72aef2499c5fb7d5.setIcon(icon_2b58bd7d402098c7c2f667507a4f0e6b);
+        
+    
+            marker_cadda7729f412c2b72aef2499c5fb7d5.bindTooltip(
+                `<div>
+                     Благовещенск
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_19fdee962d25f4318fed5bf38ecb76ed = L.marker(
+                [51.38333, 128.13333],
+                {}
+            ).addTo(feature_group_197b870a1fc9960f78869591b0087fa7);
+        
+    
+            var icon_0e855784fb12a090a75b63637fe56401 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_19fdee962d25f4318fed5bf38ecb76ed.setIcon(icon_0e855784fb12a090a75b63637fe56401);
+        
+    
+            marker_19fdee962d25f4318fed5bf38ecb76ed.bindTooltip(
+                `<div>
+                     Свободный
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_6ed8c8cadd8446e2149fd7c086d7136d = L.marker(
+                [44.94806, 34.10417],
+                {}
+            ).addTo(feature_group_197b870a1fc9960f78869591b0087fa7);
+        
+    
+            var icon_623f8431b340def5180a46a3dfd54754 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_6ed8c8cadd8446e2149fd7c086d7136d.setIcon(icon_623f8431b340def5180a46a3dfd54754);
+        
+    
+            marker_6ed8c8cadd8446e2149fd7c086d7136d.bindTooltip(
+                `<div>
+                     Симферополь
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_5a4bb90cae9038066da75c5c9a4ecf0c = L.marker(
+                [45.04889, 35.37917],
+                {}
+            ).addTo(feature_group_197b870a1fc9960f78869591b0087fa7);
+        
+    
+            var icon_e86c0d1d0ae385cc8dc675525071a446 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_5a4bb90cae9038066da75c5c9a4ecf0c.setIcon(icon_e86c0d1d0ae385cc8dc675525071a446);
+        
+    
+            marker_5a4bb90cae9038066da75c5c9a4ecf0c.bindTooltip(
+                `<div>
+                     Феодосия
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_020262e12d885af31bc52801f144d026 = L.marker(
+                [50.25778, 127.53639],
+                {}
+            ).addTo(feature_group_197b870a1fc9960f78869591b0087fa7);
+        
+    
+            var icon_b3b4e2c51460830f09a6cf5af9b8a649 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_020262e12d885af31bc52801f144d026.setIcon(icon_b3b4e2c51460830f09a6cf5af9b8a649);
+        
+    
+            marker_020262e12d885af31bc52801f144d026.bindTooltip(
+                `<div>
+                     Благовещенск
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_be31934622fd98f638006ca0d8900281 = L.marker(
+                [50.25778, 127.53639],
+                {}
+            ).addTo(feature_group_197b870a1fc9960f78869591b0087fa7);
+        
+    
+            var icon_27f6121fb5136396188664695e3a96af = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_be31934622fd98f638006ca0d8900281.setIcon(icon_27f6121fb5136396188664695e3a96af);
+        
+    
+            marker_be31934622fd98f638006ca0d8900281.bindTooltip(
+                `<div>
+                     Благовещенск
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_6b92cd4750aa8fc1ab79aadf25643e03 = L.marker(
+                [53.01667, 158.65],
+                {}
+            ).addTo(feature_group_197b870a1fc9960f78869591b0087fa7);
+        
+    
+            var icon_e70bf8eee832073ebde0dd4db6cc1153 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_6b92cd4750aa8fc1ab79aadf25643e03.setIcon(icon_e70bf8eee832073ebde0dd4db6cc1153);
+        
+    
+            marker_6b92cd4750aa8fc1ab79aadf25643e03.bindTooltip(
+                `<div>
+                     Петропавловск-Камчатский
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_1234925b0586d6e7b3a608d43b7e7b44 = L.marker(
+                [59.56667, 150.8],
+                {}
+            ).addTo(feature_group_197b870a1fc9960f78869591b0087fa7);
+        
+    
+            var icon_c5378a275e01f5e4d6d93f7ea46c0625 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_1234925b0586d6e7b3a608d43b7e7b44.setIcon(icon_c5378a275e01f5e4d6d93f7ea46c0625);
+        
+    
+            marker_1234925b0586d6e7b3a608d43b7e7b44.bindTooltip(
+                `<div>
+                     Магадан
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_5b4dbc4179be42b60fac1b2b10736712 = L.marker(
+                [50.25778, 127.53639],
+                {}
+            ).addTo(feature_group_197b870a1fc9960f78869591b0087fa7);
+        
+    
+            var icon_00ac9c227d7af520f4922df6730aa486 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_5b4dbc4179be42b60fac1b2b10736712.setIcon(icon_00ac9c227d7af520f4922df6730aa486);
+        
+    
+            marker_5b4dbc4179be42b60fac1b2b10736712.bindTooltip(
+                `<div>
+                     Благовещенск
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_efcd7bf8074d07fe0d6652af410d2324 = L.marker(
+                [50.25778, 127.53639],
+                {}
+            ).addTo(feature_group_197b870a1fc9960f78869591b0087fa7);
+        
+    
+            var icon_d4920ca92d5b359eb58ac5adcccfcb4b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_efcd7bf8074d07fe0d6652af410d2324.setIcon(icon_d4920ca92d5b359eb58ac5adcccfcb4b);
+        
+    
+            marker_efcd7bf8074d07fe0d6652af410d2324.bindTooltip(
+                `<div>
+                     Благовещенск
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_643dcb4c430151e8f9605b2a022bdb00 = L.marker(
+                [43.11667, 131.9],
+                {}
+            ).addTo(feature_group_197b870a1fc9960f78869591b0087fa7);
+        
+    
+            var icon_a87f2a74868eb0b77d202a1f6785eca8 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_643dcb4c430151e8f9605b2a022bdb00.setIcon(icon_a87f2a74868eb0b77d202a1f6785eca8);
+        
+    
+            marker_643dcb4c430151e8f9605b2a022bdb00.bindTooltip(
+                `<div>
+                     Владивосток
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_356ddde0ea51b9c364a265626c45a7e9 = L.marker(
+                [53.01667, 158.65],
+                {}
+            ).addTo(feature_group_197b870a1fc9960f78869591b0087fa7);
+        
+    
+            var icon_76d54584092db1c339dfca394855499b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_356ddde0ea51b9c364a265626c45a7e9.setIcon(icon_76d54584092db1c339dfca394855499b);
+        
+    
+            marker_356ddde0ea51b9c364a265626c45a7e9.bindTooltip(
+                `<div>
+                     Петропавловск-Камчатский
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_92c8e8a11930e1458bca6043ae3a3fe5 = L.marker(
+                [53.01667, 158.65],
+                {}
+            ).addTo(feature_group_197b870a1fc9960f78869591b0087fa7);
+        
+    
+            var icon_7d22e2be7264d532cf8d469c1dea5c67 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_92c8e8a11930e1458bca6043ae3a3fe5.setIcon(icon_7d22e2be7264d532cf8d469c1dea5c67);
+        
+    
+            marker_92c8e8a11930e1458bca6043ae3a3fe5.bindTooltip(
+                `<div>
+                     Петропавловск-Камчатский
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d80188b68caa1b4ca93bccebf44f5629 = L.marker(
+                [59.56667, 150.8],
+                {}
+            ).addTo(feature_group_197b870a1fc9960f78869591b0087fa7);
+        
+    
+            var icon_3c2b7cb8451fdfd5b32a988714313ac8 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_d80188b68caa1b4ca93bccebf44f5629.setIcon(icon_3c2b7cb8451fdfd5b32a988714313ac8);
+        
+    
+            marker_d80188b68caa1b4ca93bccebf44f5629.bindTooltip(
+                `<div>
+                     Магадан
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_afaad95300f457f90a98edba4f4e2c64 = L.marker(
+                [50.25778, 127.53639],
+                {}
+            ).addTo(feature_group_197b870a1fc9960f78869591b0087fa7);
+        
+    
+            var icon_014c3df3a31b48ca6fb5eba30030b70a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_afaad95300f457f90a98edba4f4e2c64.setIcon(icon_014c3df3a31b48ca6fb5eba30030b70a);
+        
+    
+            marker_afaad95300f457f90a98edba4f4e2c64.bindTooltip(
+                `<div>
+                     Благовещенск
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_182326eff73e6546faf081b9455a57a1 = L.marker(
+                [50.25778, 127.53639],
+                {}
+            ).addTo(feature_group_197b870a1fc9960f78869591b0087fa7);
+        
+    
+            var icon_238c905394e6899d607806b3b3faacf6 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_182326eff73e6546faf081b9455a57a1.setIcon(icon_238c905394e6899d607806b3b3faacf6);
+        
+    
+            marker_182326eff73e6546faf081b9455a57a1.bindTooltip(
+                `<div>
+                     Благовещенск
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ee4251e4e5b9fbb95720039dea34c4c7 = L.marker(
+                [45.93333, 133.73333],
+                {}
+            ).addTo(feature_group_197b870a1fc9960f78869591b0087fa7);
+        
+    
+            var icon_9446aadf275535db660230ac0a95bcf2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_ee4251e4e5b9fbb95720039dea34c4c7.setIcon(icon_9446aadf275535db660230ac0a95bcf2);
+        
+    
+            marker_ee4251e4e5b9fbb95720039dea34c4c7.bindTooltip(
+                `<div>
+                     Дальнереченск
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_00dba574470fc5860dbf76f9dd793e95 = L.marker(
+                [45.93333, 133.73333],
+                {}
+            ).addTo(feature_group_197b870a1fc9960f78869591b0087fa7);
+        
+    
+            var icon_0b42c0d5cad57fb2cc4c824ad5177fb9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_00dba574470fc5860dbf76f9dd793e95.setIcon(icon_0b42c0d5cad57fb2cc4c824ad5177fb9);
+        
+    
+            marker_00dba574470fc5860dbf76f9dd793e95.bindTooltip(
+                `<div>
+                     Дальнереченск
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d907baf14004d3ed4bb3ef0262f4fbde = L.marker(
+                [50.25778, 127.53639],
+                {}
+            ).addTo(feature_group_197b870a1fc9960f78869591b0087fa7);
+        
+    
+            var icon_cce93c514e2b7fa5a3af810f1c2b1a8e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_d907baf14004d3ed4bb3ef0262f4fbde.setIcon(icon_cce93c514e2b7fa5a3af810f1c2b1a8e);
+        
+    
+            marker_d907baf14004d3ed4bb3ef0262f4fbde.bindTooltip(
+                `<div>
+                     Благовещенск
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e63607f2dea6de665da6220141e28e8c = L.marker(
+                [52.0, 127.66667],
+                {}
+            ).addTo(feature_group_197b870a1fc9960f78869591b0087fa7);
+        
+    
+            var icon_df3ea198c481a02d36e5156187e07777 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_e63607f2dea6de665da6220141e28e8c.setIcon(icon_df3ea198c481a02d36e5156187e07777);
+        
+    
+            marker_e63607f2dea6de665da6220141e28e8c.bindTooltip(
+                `<div>
+                     Шимановск
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_087f178f8cdeedc512346184f5a65e4c = L.marker(
+                [50.25778, 127.53639],
+                {}
+            ).addTo(feature_group_197b870a1fc9960f78869591b0087fa7);
+        
+    
+            var icon_738b4bf2f6a59f615fb9ba9f6217bd9d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_087f178f8cdeedc512346184f5a65e4c.setIcon(icon_738b4bf2f6a59f615fb9ba9f6217bd9d);
+        
+    
+            marker_087f178f8cdeedc512346184f5a65e4c.bindTooltip(
+                `<div>
+                     Благовещенск
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_9a8d40c36443063ff02580f9526f1ad7 = L.marker(
+                [50.25778, 127.53639],
+                {}
+            ).addTo(feature_group_197b870a1fc9960f78869591b0087fa7);
+        
+    
+            var icon_c94d17b586039b9c503dc63c54d5bc5b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_9a8d40c36443063ff02580f9526f1ad7.setIcon(icon_c94d17b586039b9c503dc63c54d5bc5b);
+        
+    
+            marker_9a8d40c36443063ff02580f9526f1ad7.bindTooltip(
+                `<div>
+                     Благовещенск
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_16064e0c83dfeb2b2c3f2d7617b8bc2e = L.marker(
+                [53.01667, 158.65],
+                {}
+            ).addTo(feature_group_197b870a1fc9960f78869591b0087fa7);
+        
+    
+            var icon_f066856c96bae61164303e705a2e6019 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_16064e0c83dfeb2b2c3f2d7617b8bc2e.setIcon(icon_f066856c96bae61164303e705a2e6019);
+        
+    
+            marker_16064e0c83dfeb2b2c3f2d7617b8bc2e.bindTooltip(
+                `<div>
+                     Петропавловск-Камчатский
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_1c3a83be689096f679cece0f1076483e = L.marker(
+                [43.8, 131.95],
+                {}
+            ).addTo(feature_group_197b870a1fc9960f78869591b0087fa7);
+        
+    
+            var icon_aec7837ea1abd8cdfd4c5438c6ea2a50 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_1c3a83be689096f679cece0f1076483e.setIcon(icon_aec7837ea1abd8cdfd4c5438c6ea2a50);
+        
+    
+            marker_1c3a83be689096f679cece0f1076483e.bindTooltip(
+                `<div>
+                     Уссурийск
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e38520ddf9e039532aac25d38f941c64 = L.marker(
+                [55.44083, 65.34111],
+                {}
+            ).addTo(feature_group_197b870a1fc9960f78869591b0087fa7);
+        
+    
+            var icon_fbbbb33871af6aca9dea7794311d3fe3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_e38520ddf9e039532aac25d38f941c64.setIcon(icon_fbbbb33871af6aca9dea7794311d3fe3);
+        
+    
+            marker_e38520ddf9e039532aac25d38f941c64.bindTooltip(
+                `<div>
+                     Курган
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_0220d07dbc6944ec4be52ea702fe9bff = L.marker(
+                [55.44083, 65.34111],
+                {}
+            ).addTo(feature_group_197b870a1fc9960f78869591b0087fa7);
+        
+    
+            var icon_90719f9b58bf5042d281fc4ccfb82305 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_0220d07dbc6944ec4be52ea702fe9bff.setIcon(icon_90719f9b58bf5042d281fc4ccfb82305);
+        
+    
+            marker_0220d07dbc6944ec4be52ea702fe9bff.bindTooltip(
+                `<div>
+                     Курган
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_800d0b94775c2c519cef616ec072655b = L.marker(
+                [43.11667, 131.9],
+                {}
+            ).addTo(feature_group_197b870a1fc9960f78869591b0087fa7);
+        
+    
+            var icon_749fb319df715f7b2c19ff3fe72709d2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_800d0b94775c2c519cef616ec072655b.setIcon(icon_749fb319df715f7b2c19ff3fe72709d2);
+        
+    
+            marker_800d0b94775c2c519cef616ec072655b.bindTooltip(
+                `<div>
+                     Владивосток
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d605c291b4ed74d9665e7ae417486d14 = L.marker(
+                [53.01667, 158.65],
+                {}
+            ).addTo(feature_group_197b870a1fc9960f78869591b0087fa7);
+        
+    
+            var icon_c6e1161ed6459fa3d3b884b53b8eacf0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_d605c291b4ed74d9665e7ae417486d14.setIcon(icon_c6e1161ed6459fa3d3b884b53b8eacf0);
+        
+    
+            marker_d605c291b4ed74d9665e7ae417486d14.bindTooltip(
+                `<div>
+                     Петропавловск-Камчатский
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_13f405044b0ed7760c598b816d4f66a9 = L.marker(
+                [50.25778, 127.53639],
+                {}
+            ).addTo(feature_group_197b870a1fc9960f78869591b0087fa7);
+        
+    
+            var icon_39e372b0ee2110608451b72aa83fd430 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_13f405044b0ed7760c598b816d4f66a9.setIcon(icon_39e372b0ee2110608451b72aa83fd430);
+        
+    
+            marker_13f405044b0ed7760c598b816d4f66a9.bindTooltip(
+                `<div>
+                     Благовещенск
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_62e7330e0a3ea508c8440d16ecaec335 = L.marker(
+                [53.73333, 127.25],
+                {}
+            ).addTo(feature_group_197b870a1fc9960f78869591b0087fa7);
+        
+    
+            var icon_c0c28c58d8a4b9f4a777dffdf64f5095 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_62e7330e0a3ea508c8440d16ecaec335.setIcon(icon_c0c28c58d8a4b9f4a777dffdf64f5095);
+        
+    
+            marker_62e7330e0a3ea508c8440d16ecaec335.bindTooltip(
+                `<div>
+                     Зея
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ef1e6c29c7bb294416baf90ac53faa71 = L.marker(
+                [50.25778, 127.53639],
+                {}
+            ).addTo(feature_group_197b870a1fc9960f78869591b0087fa7);
+        
+    
+            var icon_d2e9ef1c8fbabf5ea5c7f3a46a3995a6 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_ef1e6c29c7bb294416baf90ac53faa71.setIcon(icon_d2e9ef1c8fbabf5ea5c7f3a46a3995a6);
+        
+    
+            marker_ef1e6c29c7bb294416baf90ac53faa71.bindTooltip(
+                `<div>
+                     Благовещенск
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e3bff4072e51f26f49181269a82384e6 = L.marker(
+                [51.38333, 128.13333],
+                {}
+            ).addTo(feature_group_197b870a1fc9960f78869591b0087fa7);
+        
+    
+            var icon_aa7064c7e114f3b25028bb77f4f41957 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_e3bff4072e51f26f49181269a82384e6.setIcon(icon_aa7064c7e114f3b25028bb77f4f41957);
+        
+    
+            marker_e3bff4072e51f26f49181269a82384e6.bindTooltip(
+                `<div>
+                     Свободный
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var layer_control_eb8103e8016b51e9948b5616d96fe028 = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_da0b78e8a739b9505aac5eb894703019,
+                    "stamentoner" : tile_layer_1f9a8948b5f8bcda6cf85fcb91401549,
+                    "stamenterrain" : tile_layer_0d822d707b1fd4adc160180437300868,
+                    "stamenwatercolor" : tile_layer_fe2ce2cc7f25f8aed2743e6871148300,
+                    "cartodbpositron" : tile_layer_7d8c220db05da4adf9c878ae5960c5b2,
+                    "cartodbdark_matter" : tile_layer_d6aa458d8b3621203d8ee187a90ca6d1,
+                    "Esri Satellite" : tile_layer_42fd742928e409eb2e57bce67a155b3d,
+                },
+                overlays :  {
+                    "Clusters" : marker_cluster_f68c0194942428dc989688faac3aba29,
+                    "All markers" : feature_group_197b870a1fc9960f78869591b0087fa7,
+                },
+            };
+            L.control.layers(
+                layer_control_eb8103e8016b51e9948b5616d96fe028.base_layers,
+                layer_control_eb8103e8016b51e9948b5616d96fe028.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_dfa1e62e6d21a061f8e34a1f14df2a0c);
+            tile_layer_1f9a8948b5f8bcda6cf85fcb91401549.remove();
+            tile_layer_0d822d707b1fd4adc160180437300868.remove();
+            tile_layer_fe2ce2cc7f25f8aed2743e6871148300.remove();
+            tile_layer_da0b78e8a739b9505aac5eb894703019.remove();
+            tile_layer_7d8c220db05da4adf9c878ae5960c5b2.remove();
+            tile_layer_d6aa458d8b3621203d8ee187a90ca6d1.remove();
+            tile_layer_42fd742928e409eb2e57bce67a155b3d.remove();
+            feature_group_197b870a1fc9960f78869591b0087fa7.remove();
+        
+    
+            ant_path_8bb2cdde24b133d174125b109c37130f = L.polyline.antPath(
+              [[56.15, 101.63], [52.28333, 104.3]],
+              {"bubblingMouseEvents": true, "color": "#0000FF", "dashArray": [10, 20], "dashOffset": null, "delay": 400, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "hardwareAcceleration": false, "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.5, "paused": false, "pulseColor": "#FFFFFF", "reverse": false, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+        ).addTo(map_dfa1e62e6d21a061f8e34a1f14df2a0c);
+        
+    
+            ant_path_d2007082d241ebf2f4555013b2721e4e = L.polyline.antPath(
+              [[44.94806, 34.10417], [45.04889, 35.37917]],
+              {"bubblingMouseEvents": true, "color": "#0000FF", "dashArray": [10, 20], "dashOffset": null, "delay": 400, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "hardwareAcceleration": false, "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.5, "paused": false, "pulseColor": "#FFFFFF", "reverse": false, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+        ).addTo(map_dfa1e62e6d21a061f8e34a1f14df2a0c);
+        
+    
+            ant_path_d0252173f8d014c9d3bf8093f00b2b1d = L.polyline.antPath(
+              [[44.94806, 34.10417], [44.94806, 34.10417]],
+              {"bubblingMouseEvents": true, "color": "#0000FF", "dashArray": [10, 20], "dashOffset": null, "delay": 400, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "hardwareAcceleration": false, "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.5, "paused": false, "pulseColor": "#FFFFFF", "reverse": false, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+        ).addTo(map_dfa1e62e6d21a061f8e34a1f14df2a0c);
+        
+    
+            ant_path_fa86bfc817846e314376e9d009f423aa = L.polyline.antPath(
+              [[50.25778, 127.53639], [50.25778, 127.53639]],
+              {"bubblingMouseEvents": true, "color": "#0000FF", "dashArray": [10, 20], "dashOffset": null, "delay": 400, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "hardwareAcceleration": false, "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.5, "paused": false, "pulseColor": "#FFFFFF", "reverse": false, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+        ).addTo(map_dfa1e62e6d21a061f8e34a1f14df2a0c);
+        
+    
+            ant_path_3a65841d8ede824b6cb489b7f9e16173 = L.polyline.antPath(
+              [[50.25778, 127.53639], [53.73333, 127.25]],
+              {"bubblingMouseEvents": true, "color": "#0000FF", "dashArray": [10, 20], "dashOffset": null, "delay": 400, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "hardwareAcceleration": false, "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.5, "paused": false, "pulseColor": "#FFFFFF", "reverse": false, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+        ).addTo(map_dfa1e62e6d21a061f8e34a1f14df2a0c);
+        
+    
+            ant_path_124d81d9a1e273b32edb526614204b25 = L.polyline.antPath(
+              [[44.94806, 34.10417], [44.94806, 34.10417]],
+              {"bubblingMouseEvents": true, "color": "#0000FF", "dashArray": [10, 20], "dashOffset": null, "delay": 400, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "hardwareAcceleration": false, "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.5, "paused": false, "pulseColor": "#FFFFFF", "reverse": false, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+        ).addTo(map_dfa1e62e6d21a061f8e34a1f14df2a0c);
+        
+    
+            ant_path_c4a96d925adb16cdd36164bb93f5e8b5 = L.polyline.antPath(
+              [[44.94806, 34.10417], [44.94806, 34.10417]],
+              {"bubblingMouseEvents": true, "color": "#0000FF", "dashArray": [10, 20], "dashOffset": null, "delay": 400, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "hardwareAcceleration": false, "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.5, "paused": false, "pulseColor": "#FFFFFF", "reverse": false, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+        ).addTo(map_dfa1e62e6d21a061f8e34a1f14df2a0c);
+        
+    
+            ant_path_b1afc079586a2eeafad02a3efd0907ef = L.polyline.antPath(
+              [[52.28333, 104.3], [53.91667, 102.05]],
+              {"bubblingMouseEvents": true, "color": "#0000FF", "dashArray": [10, 20], "dashOffset": null, "delay": 400, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "hardwareAcceleration": false, "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.5, "paused": false, "pulseColor": "#FFFFFF", "reverse": false, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+        ).addTo(map_dfa1e62e6d21a061f8e34a1f14df2a0c);
+        
+    
+            ant_path_495fb65724f14e17dabf35bb118dd65a = L.polyline.antPath(
+              [[43.11667, 131.9], [53.01667, 158.65]],
+              {"bubblingMouseEvents": true, "color": "#0000FF", "dashArray": [10, 20], "dashOffset": null, "delay": 400, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "hardwareAcceleration": false, "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.5, "paused": false, "pulseColor": "#FFFFFF", "reverse": false, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+        ).addTo(map_dfa1e62e6d21a061f8e34a1f14df2a0c);
+        
+    
+            ant_path_74cab4001a9ebbfee996867ce20d609a = L.polyline.antPath(
+              [[55.44083, 65.34111], [55.44083, 65.34111]],
+              {"bubblingMouseEvents": true, "color": "#0000FF", "dashArray": [10, 20], "dashOffset": null, "delay": 400, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "hardwareAcceleration": false, "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.5, "paused": false, "pulseColor": "#FFFFFF", "reverse": false, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+        ).addTo(map_dfa1e62e6d21a061f8e34a1f14df2a0c);
+        
+    
+            ant_path_002c6e703bec5ae951b369044db0066c = L.polyline.antPath(
+              [[53.01667, 158.65], [52.93333, 158.4]],
+              {"bubblingMouseEvents": true, "color": "#0000FF", "dashArray": [10, 20], "dashOffset": null, "delay": 400, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "hardwareAcceleration": false, "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.5, "paused": false, "pulseColor": "#FFFFFF", "reverse": false, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+        ).addTo(map_dfa1e62e6d21a061f8e34a1f14df2a0c);
+        
+    
+            ant_path_bbe20f82c8677d04aaac6c4934c39702 = L.polyline.antPath(
+              [[43.11667, 131.9], [53.01667, 158.65]],
+              {"bubblingMouseEvents": true, "color": "#0000FF", "dashArray": [10, 20], "dashOffset": null, "delay": 400, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "hardwareAcceleration": false, "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.5, "paused": false, "pulseColor": "#FFFFFF", "reverse": false, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+        ).addTo(map_dfa1e62e6d21a061f8e34a1f14df2a0c);
+        
+    
+            ant_path_dadece6bb1522196e55e95c4dc5eb837 = L.polyline.antPath(
+              [[50.25778, 127.53639], [51.38333, 128.13333]],
+              {"bubblingMouseEvents": true, "color": "#0000FF", "dashArray": [10, 20], "dashOffset": null, "delay": 400, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "hardwareAcceleration": false, "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.5, "paused": false, "pulseColor": "#FFFFFF", "reverse": false, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+        ).addTo(map_dfa1e62e6d21a061f8e34a1f14df2a0c);
+        
+    
+            ant_path_496ad9cc49b9ee6c4a2f649a5b5fbb17 = L.polyline.antPath(
+              [[50.25778, 127.53639], [52.0, 127.66667]],
+              {"bubblingMouseEvents": true, "color": "#0000FF", "dashArray": [10, 20], "dashOffset": null, "delay": 400, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "hardwareAcceleration": false, "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.5, "paused": false, "pulseColor": "#FFFFFF", "reverse": false, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+        ).addTo(map_dfa1e62e6d21a061f8e34a1f14df2a0c);
+        
+    
+            ant_path_bf24bc1e228ddc2955f8bda0be82cdee = L.polyline.antPath(
+              [[43.11667, 131.9], [53.01667, 158.65]],
+              {"bubblingMouseEvents": true, "color": "#0000FF", "dashArray": [10, 20], "dashOffset": null, "delay": 400, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "hardwareAcceleration": false, "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.5, "paused": false, "pulseColor": "#FFFFFF", "reverse": false, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+        ).addTo(map_dfa1e62e6d21a061f8e34a1f14df2a0c);
+        
+    
+            ant_path_f76f3b3417ad6eef0841ab9214ce6b79 = L.polyline.antPath(
+              [[50.25778, 127.53639], [53.73333, 127.25]],
+              {"bubblingMouseEvents": true, "color": "#0000FF", "dashArray": [10, 20], "dashOffset": null, "delay": 400, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "hardwareAcceleration": false, "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.5, "paused": false, "pulseColor": "#FFFFFF", "reverse": false, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+        ).addTo(map_dfa1e62e6d21a061f8e34a1f14df2a0c);
+        
+    
+            ant_path_fbf13c8df4ff59f05a93ec0b898b9ffc = L.polyline.antPath(
+              [[55.44083, 65.34111], [55.44083, 65.34111]],
+              {"bubblingMouseEvents": true, "color": "#0000FF", "dashArray": [10, 20], "dashOffset": null, "delay": 400, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "hardwareAcceleration": false, "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.5, "paused": false, "pulseColor": "#FFFFFF", "reverse": false, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+        ).addTo(map_dfa1e62e6d21a061f8e34a1f14df2a0c);
+        
+    
+            ant_path_4b47a763736c34b232eb3382b075e52e = L.polyline.antPath(
+              [[44.94806, 34.10417], [44.94806, 34.10417]],
+              {"bubblingMouseEvents": true, "color": "#0000FF", "dashArray": [10, 20], "dashOffset": null, "delay": 400, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "hardwareAcceleration": false, "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.5, "paused": false, "pulseColor": "#FFFFFF", "reverse": false, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+        ).addTo(map_dfa1e62e6d21a061f8e34a1f14df2a0c);
+        
+    
+            ant_path_a8904a106148b034623b2d9df9d5c51d = L.polyline.antPath(
+              [[50.25778, 127.53639], [50.91667, 128.48333]],
+              {"bubblingMouseEvents": true, "color": "#0000FF", "dashArray": [10, 20], "dashOffset": null, "delay": 400, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "hardwareAcceleration": false, "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.5, "paused": false, "pulseColor": "#FFFFFF", "reverse": false, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+        ).addTo(map_dfa1e62e6d21a061f8e34a1f14df2a0c);
+        
+    
+            ant_path_e6771bf593b28e5c0e60c4415d0df1b5 = L.polyline.antPath(
+              [[50.25778, 127.53639], [52.0, 127.66667]],
+              {"bubblingMouseEvents": true, "color": "#0000FF", "dashArray": [10, 20], "dashOffset": null, "delay": 400, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "hardwareAcceleration": false, "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.5, "paused": false, "pulseColor": "#FFFFFF", "reverse": false, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+        ).addTo(map_dfa1e62e6d21a061f8e34a1f14df2a0c);
+        
+    
+            ant_path_a49161d1a9dfac2a68a32479e4e1c8e3 = L.polyline.antPath(
+              [[50.25778, 127.53639], [50.25778, 127.53639]],
+              {"bubblingMouseEvents": true, "color": "#0000FF", "dashArray": [10, 20], "dashOffset": null, "delay": 400, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "hardwareAcceleration": false, "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.5, "paused": false, "pulseColor": "#FFFFFF", "reverse": false, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+        ).addTo(map_dfa1e62e6d21a061f8e34a1f14df2a0c);
+        
+    
+            ant_path_ae4dc18af792f1c140e738ece6ce879b = L.polyline.antPath(
+              [[50.25778, 127.53639], [51.38333, 128.13333]],
+              {"bubblingMouseEvents": true, "color": "#0000FF", "dashArray": [10, 20], "dashOffset": null, "delay": 400, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "hardwareAcceleration": false, "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.5, "paused": false, "pulseColor": "#FFFFFF", "reverse": false, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+        ).addTo(map_dfa1e62e6d21a061f8e34a1f14df2a0c);
+        
+    
+            ant_path_f41e2dc1465f67929e6fa01f912052f2 = L.polyline.antPath(
+              [[50.25778, 127.53639], [50.25778, 127.53639]],
+              {"bubblingMouseEvents": true, "color": "#0000FF", "dashArray": [10, 20], "dashOffset": null, "delay": 400, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "hardwareAcceleration": false, "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.5, "paused": false, "pulseColor": "#FFFFFF", "reverse": false, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+        ).addTo(map_dfa1e62e6d21a061f8e34a1f14df2a0c);
+        
+    
+            ant_path_0c58117b63764de5435bf0af285c2ea2 = L.polyline.antPath(
+              [[43.11667, 131.9], [53.01667, 158.65]],
+              {"bubblingMouseEvents": true, "color": "#0000FF", "dashArray": [10, 20], "dashOffset": null, "delay": 400, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "hardwareAcceleration": false, "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.5, "paused": false, "pulseColor": "#FFFFFF", "reverse": false, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+        ).addTo(map_dfa1e62e6d21a061f8e34a1f14df2a0c);
+        
+    
+            ant_path_859fe6113f3403aaf5631ba6fb7fe373 = L.polyline.antPath(
+              [[50.25778, 127.53639], [51.7602528, 128.121175]],
+              {"bubblingMouseEvents": true, "color": "#0000FF", "dashArray": [10, 20], "dashOffset": null, "delay": 400, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "hardwareAcceleration": false, "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.5, "paused": false, "pulseColor": "#FFFFFF", "reverse": false, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+        ).addTo(map_dfa1e62e6d21a061f8e34a1f14df2a0c);
+        
+    
+            ant_path_e1096b552e957212e8b0e355acf39963 = L.polyline.antPath(
+              [[50.25778, 127.53639], [51.38333, 128.13333]],
+              {"bubblingMouseEvents": true, "color": "#0000FF", "dashArray": [10, 20], "dashOffset": null, "delay": 400, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "hardwareAcceleration": false, "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.5, "paused": false, "pulseColor": "#FFFFFF", "reverse": false, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+        ).addTo(map_dfa1e62e6d21a061f8e34a1f14df2a0c);
+        
+    
+            ant_path_bf9326cea34a41bd0010aaa12b729171 = L.polyline.antPath(
+              [[44.94806, 34.10417], [45.04889, 35.37917]],
+              {"bubblingMouseEvents": true, "color": "#0000FF", "dashArray": [10, 20], "dashOffset": null, "delay": 400, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "hardwareAcceleration": false, "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.5, "paused": false, "pulseColor": "#FFFFFF", "reverse": false, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+        ).addTo(map_dfa1e62e6d21a061f8e34a1f14df2a0c);
+        
+    
+            ant_path_2b7cbbe63acccec0973c81be84e7b4ba = L.polyline.antPath(
+              [[50.25778, 127.53639], [50.25778, 127.53639]],
+              {"bubblingMouseEvents": true, "color": "#0000FF", "dashArray": [10, 20], "dashOffset": null, "delay": 400, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "hardwareAcceleration": false, "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.5, "paused": false, "pulseColor": "#FFFFFF", "reverse": false, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+        ).addTo(map_dfa1e62e6d21a061f8e34a1f14df2a0c);
+        
+    
+            ant_path_a4d2efd9627abb6ac18bb8b9a93c941e = L.polyline.antPath(
+              [[53.01667, 158.65], [59.56667, 150.8]],
+              {"bubblingMouseEvents": true, "color": "#0000FF", "dashArray": [10, 20], "dashOffset": null, "delay": 400, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "hardwareAcceleration": false, "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.5, "paused": false, "pulseColor": "#FFFFFF", "reverse": false, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+        ).addTo(map_dfa1e62e6d21a061f8e34a1f14df2a0c);
+        
+    
+            ant_path_2fd0eaa49edfbb5fcc54207b3032b4f3 = L.polyline.antPath(
+              [[50.25778, 127.53639], [50.25778, 127.53639]],
+              {"bubblingMouseEvents": true, "color": "#0000FF", "dashArray": [10, 20], "dashOffset": null, "delay": 400, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "hardwareAcceleration": false, "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.5, "paused": false, "pulseColor": "#FFFFFF", "reverse": false, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+        ).addTo(map_dfa1e62e6d21a061f8e34a1f14df2a0c);
+        
+    
+            ant_path_5e6fd846a551e03eb32d22e44019aaff = L.polyline.antPath(
+              [[43.11667, 131.9], [53.01667, 158.65]],
+              {"bubblingMouseEvents": true, "color": "#0000FF", "dashArray": [10, 20], "dashOffset": null, "delay": 400, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "hardwareAcceleration": false, "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.5, "paused": false, "pulseColor": "#FFFFFF", "reverse": false, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+        ).addTo(map_dfa1e62e6d21a061f8e34a1f14df2a0c);
+        
+    
+            ant_path_ab217071b7904667cf31105da9bf6202 = L.polyline.antPath(
+              [[53.01667, 158.65], [59.56667, 150.8]],
+              {"bubblingMouseEvents": true, "color": "#0000FF", "dashArray": [10, 20], "dashOffset": null, "delay": 400, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "hardwareAcceleration": false, "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.5, "paused": false, "pulseColor": "#FFFFFF", "reverse": false, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+        ).addTo(map_dfa1e62e6d21a061f8e34a1f14df2a0c);
+        
+    
+            ant_path_a766041e1a8d55190f8319933cb7c3c8 = L.polyline.antPath(
+              [[50.25778, 127.53639], [50.25778, 127.53639]],
+              {"bubblingMouseEvents": true, "color": "#0000FF", "dashArray": [10, 20], "dashOffset": null, "delay": 400, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "hardwareAcceleration": false, "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.5, "paused": false, "pulseColor": "#FFFFFF", "reverse": false, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+        ).addTo(map_dfa1e62e6d21a061f8e34a1f14df2a0c);
+        
+    
+            ant_path_c6d169bb67e3af7593fa3bb896835d3c = L.polyline.antPath(
+              [[45.93333, 133.73333], [45.93333, 133.73333]],
+              {"bubblingMouseEvents": true, "color": "#0000FF", "dashArray": [10, 20], "dashOffset": null, "delay": 400, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "hardwareAcceleration": false, "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.5, "paused": false, "pulseColor": "#FFFFFF", "reverse": false, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+        ).addTo(map_dfa1e62e6d21a061f8e34a1f14df2a0c);
+        
+    
+            ant_path_c1ed9e7ebb0ecca5446eb2f67d6a8cfb = L.polyline.antPath(
+              [[50.25778, 127.53639], [52.0, 127.66667]],
+              {"bubblingMouseEvents": true, "color": "#0000FF", "dashArray": [10, 20], "dashOffset": null, "delay": 400, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "hardwareAcceleration": false, "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.5, "paused": false, "pulseColor": "#FFFFFF", "reverse": false, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+        ).addTo(map_dfa1e62e6d21a061f8e34a1f14df2a0c);
+        
+    
+            ant_path_799b9fc355464ed6257bf73dfff31ebc = L.polyline.antPath(
+              [[50.25778, 127.53639], [50.25778, 127.53639]],
+              {"bubblingMouseEvents": true, "color": "#0000FF", "dashArray": [10, 20], "dashOffset": null, "delay": 400, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "hardwareAcceleration": false, "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.5, "paused": false, "pulseColor": "#FFFFFF", "reverse": false, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+        ).addTo(map_dfa1e62e6d21a061f8e34a1f14df2a0c);
+        
+    
+            ant_path_ee8e153dcc72da6d7e2ac8c491a106ec = L.polyline.antPath(
+              [[53.01667, 158.65], [43.8, 131.95]],
+              {"bubblingMouseEvents": true, "color": "#0000FF", "dashArray": [10, 20], "dashOffset": null, "delay": 400, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "hardwareAcceleration": false, "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.5, "paused": false, "pulseColor": "#FFFFFF", "reverse": false, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+        ).addTo(map_dfa1e62e6d21a061f8e34a1f14df2a0c);
+        
+    
+            ant_path_ccbae901972b8cd7b72f73e7265c22a7 = L.polyline.antPath(
+              [[55.44083, 65.34111], [55.44083, 65.34111]],
+              {"bubblingMouseEvents": true, "color": "#0000FF", "dashArray": [10, 20], "dashOffset": null, "delay": 400, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "hardwareAcceleration": false, "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.5, "paused": false, "pulseColor": "#FFFFFF", "reverse": false, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+        ).addTo(map_dfa1e62e6d21a061f8e34a1f14df2a0c);
+        
+    
+            ant_path_f70b4e17faa1a7771b5b9121871c25f4 = L.polyline.antPath(
+              [[43.11667, 131.9], [53.01667, 158.65]],
+              {"bubblingMouseEvents": true, "color": "#0000FF", "dashArray": [10, 20], "dashOffset": null, "delay": 400, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "hardwareAcceleration": false, "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.5, "paused": false, "pulseColor": "#FFFFFF", "reverse": false, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+        ).addTo(map_dfa1e62e6d21a061f8e34a1f14df2a0c);
+        
+    
+            ant_path_2ff3c41d1f7549fe3f30d4ba20b323d3 = L.polyline.antPath(
+              [[50.25778, 127.53639], [53.73333, 127.25]],
+              {"bubblingMouseEvents": true, "color": "#0000FF", "dashArray": [10, 20], "dashOffset": null, "delay": 400, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "hardwareAcceleration": false, "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.5, "paused": false, "pulseColor": "#FFFFFF", "reverse": false, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+        ).addTo(map_dfa1e62e6d21a061f8e34a1f14df2a0c);
+        
+    
+            ant_path_e94673a74bc863613bdb4ccc014e2d3b = L.polyline.antPath(
+              [[50.25778, 127.53639], [51.38333, 128.13333]],
+              {"bubblingMouseEvents": true, "color": "#0000FF", "dashArray": [10, 20], "dashOffset": null, "delay": 400, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "hardwareAcceleration": false, "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.5, "paused": false, "pulseColor": "#FFFFFF", "reverse": false, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+        ).addTo(map_dfa1e62e6d21a061f8e34a1f14df2a0c);
+        
+</script>
+</html>
